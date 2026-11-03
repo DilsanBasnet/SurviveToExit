@@ -10,6 +10,27 @@ public class Player : MonoBehaviour
 
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.1f);
     public LayerMask groundLayer;
+
+
+    public Transform wallCheckRight;
+    public Transform wallCheckleft;
+    public Vector2 wallCheckSize = new Vector2(0.2f, 0.5f);
+    public LayerMask wallLayer;
+    public float wallSlidingSpeed = 2f;
+    public Vector2 wallJumpingPower = new Vector2(8f, 12f);
+
+
+
+    private bool isWallSliding;
+    private bool isWallJumping;
+    private float wallJumpingDirection;
+    private float wallJumpingCounter;
+    private float wallJumpingDuration = 0.4f;
+    private float wallJumpingTime = 0.2f;
+
+    
+
+
     public Animator anim;
 
     private Rigidbody2D rb;
@@ -19,11 +40,22 @@ public class Player : MonoBehaviour
 
     private bool Grounded;
 
+    private bool canDoubleJump;
+
+    private bool isTouchingRightWall;
+    private bool isTouchingLeftWall;
+
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D> ();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        if(anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
 
     }
 
@@ -40,7 +72,13 @@ public class Player : MonoBehaviour
             move = 1f;
         }
 
-        if(spriteRenderer != null)
+        if(anim != null)
+        {
+            bool isMoving = (move != 0f);
+            anim.SetBool("isRunning", isMoving);
+        }
+
+        if(spriteRenderer != null && !isWallJumping)
         {
             if(move > 0) 
             spriteRenderer.flipX = false;
@@ -54,28 +92,125 @@ public class Player : MonoBehaviour
             Grounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
         }
 
+        if(Grounded)
+        {
+            canDoubleJump = true;
+            if(anim != null) anim.SetBool("isJumping", false);
+                  }
+
+                  CheckWalls();
+                  WallSlide();
+                  WallJumpLogic();
+
+
         bool jumpPressed = Keyboard.current != null && (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame);
 
-        if(jumpPressed && Grounded)
+        if(jumpPressed)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
+
+            if(isWallJumping)
+            {
+                rb.linearVelocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+                wallJumpingCounter = 0f;
+
+                if(spriteRenderer != null) 
+                spriteRenderer.flipX = wallJumpingDirection > 0 ? false : true;
+
+                isWallJumping = false;
+
+            }
+           else  if(Grounded)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
+                if(anim != null) anim.SetBool("isJumping", true) ;
+                
+                        }
+
+            else if(canDoubleJump)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump) ;
+                canDoubleJump = false;
+                if(anim != null) anim.SetBool("isJumping", true);
+            }
         }
 
-        if(move >= 0.1f || move <= -0.1f)
+
+      
+    }
+
+    private void CheckWalls()
+    {
+        isTouchingRightWall = false;
+        isTouchingLeftWall = false;
+
+        if(wallCheckRight != null)
         {
-            anim.SetBool("isRunning", true);
+            isTouchingRightWall= Physics2D.OverlapBox(wallCheckRight.position, wallCheckSize, 0f, wallLayer);
+        }
+
+        if(wallCheckleft != null)
+        {
+            isTouchingLeftWall = Physics2D.OverlapBox(wallCheckleft.position, wallCheckSize, 0f, wallLayer);
+
+        }
+        if(!Grounded && (isTouchingRightWall || isTouchingLeftWall))
+        {
+            wallJumpingDirection = isTouchingRightWall ? -1f : 1f;
+            wallJumpingCounter = wallJumpingTime;
+            CancelInvoke(nameof(StopWallJumping));
+
         }
         else
         {
-            anim.SetBool("isRunning", false);
+            wallJumpingCounter -= Time.deltaTime;
+
         }
     }
+
+    private void WallSlide()
+    {
+        if(!Grounded && (isTouchingRightWall || isTouchingLeftWall) && move != 0f)
+        {
+            isWallSliding = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Max(rb.linearVelocity.y, -wallSlidingSpeed));
+
+        }
+        else
+        {
+            isWallSliding = false;
+
+        }
+    }
+
+    
+    private void WallJumpLogic()
+    {
+        bool jumpPressed = Keyboard.current != null && (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame);
+
+        if(wallJumpingCounter > 0 && jumpPressed)
+        {
+            isWallJumping = true;
+            wallJumpingDirection = spriteRenderer.flipX ? 1f : -1f;
+
+            rb.linearVelocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
+
+            wallJumpingCounter = 0f;
+
+            Invoke(nameof(StopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    private void StopWallJumping()
+    {
+        isWallJumping = false;
+    }
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Ground"))
         {
-            anim.SetBool("isJumping", false);
+            if(anim != null)  anim.SetBool("isJumping", false);
 
         }
     }
@@ -83,7 +218,7 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ground"))
         {
-            anim.SetBool("isJumping", true);
+           if(anim != null) anim.SetBool("isJumping", true);
 
         }
     }
@@ -91,7 +226,9 @@ public class Player : MonoBehaviour
     
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y) ;
-        
+        if(!isWallJumping)
+        {
+            rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y) ;
+        }  
     }
 }
