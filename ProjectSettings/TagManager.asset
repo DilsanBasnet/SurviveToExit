@@ -8,6 +8,8 @@ TagManager:
   - DeathZone
   - Rocket
   - Wall
+  - Coin
+  - Fuel
   layers:
   - Default
   - TransparentFX

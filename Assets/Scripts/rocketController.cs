@@ -2,12 +2,19 @@ using UnityEngine;
 using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class rocketController : MonoBehaviour
 {
     public float thrustPower = 12f;
     public float steeringSpeed = 8f;
     // public float upwardGravity = 1.5f;
+
+   public float maxtiltAngle = 25f;
+   public float tiltsmoothSpeed = 10f;
+
+   public Transform spriteTransform;
+
 
     public CinemachineCamera cinemachineCam;
     public Transform playertransform;
@@ -16,12 +23,32 @@ public class rocketController : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
     private bool isPiloting = false;
+    private bool isOutOfFuel = false;
+
+    private int coinCount = 0;
+
+    private float currentTilt = 0f;
+
+    public float maxFuel = 100f;
+    public float fuelBurnRate = 12f;
+    private float currentFuel;
+
+    public TextMeshProUGUI coinText;
+    public TextMeshProUGUI fuelText;
+
+
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>() ;
         boxCollider = GetComponent<BoxCollider2D>();
+        if(spriteTransform == null) 
+        spriteTransform = transform;
+
+        currentFuel = maxFuel;
+        UpdateUI();
+
 
 
 
@@ -61,7 +88,7 @@ public class rocketController : MonoBehaviour
         float moveHorizontal = 0f;
         float moveVertical = 0f;
 
-        if(Keyboard.current != null)
+        if(!isOutOfFuel && Keyboard.current != null)
         {
             if(Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveHorizontal = -1f;
             if(Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveHorizontal = 1f;
@@ -70,8 +97,51 @@ public class rocketController : MonoBehaviour
 
         }
 
-        Vector2 force = new Vector2(moveHorizontal * steeringSpeed, moveVertical * thrustPower);
+        if(!isOutOfFuel && (moveHorizontal != 0f || moveVertical != 0f))
+        {
+            currentFuel -= fuelBurnRate * Time.fixedDeltaTime;
+
+            if(currentFuel <= 0f)
+            {
+                currentFuel = 0f;
+                isOutOfFuel = true;
+                rb.gravityScale = 2f;
+
+            }
+            Vector2 force = new Vector2(moveHorizontal * steeringSpeed, moveVertical * thrustPower);
         rb.AddForce(force);
+
+        }
+        UpdateUI();
+
+        float targetTilt = isOutOfFuel ? 0f : (-moveHorizontal * maxtiltAngle);
+
+        currentTilt = Mathf.Lerp(currentTilt, targetTilt, tiltsmoothSpeed * Time.fixedDeltaTime);
+
+        if(spriteTransform != null)
+        {
+            spriteTransform.rotation = Quaternion.Euler(0f, 0f, currentTilt);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Coin"))
+        {
+            coinCount++;
+            Destroy(collision.gameObject);
+            UpdateUI();
+        }
+
+        else  if(collision.CompareTag("Fuel"))
+        {
+            currentFuel = maxFuel; 
+            isOutOfFuel = false;
+            rb.gravityScale = 0.5f; 
+            Destroy(collision.gameObject);
+            UpdateUI();
+        }
+
 
     }
 
@@ -79,10 +149,18 @@ public class rocketController : MonoBehaviour
     {
         if(isPiloting && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground")))
         {
-            RestartGame() ;
+            RestartGame();
         }
+    }
 
 
+    private void UpdateUI()
+    {
+        if(coinText != null)
+            coinText.text = "COINS: " + coinCount;
+
+        if(fuelText != null)
+            fuelText.text = "FUEL: " + Mathf.Round(currentFuel) + "%";
     }
 
     private void RestartGame()
