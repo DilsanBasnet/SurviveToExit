@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -213,6 +214,10 @@ public class Player : MonoBehaviour
             if(anim != null)  anim.SetBool("isJumping", false);
 
         }
+        if(other.gameObject.CompareTag("Obstacle"))
+        {
+            RestartGame();
+        }
     }
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -236,6 +241,16 @@ public class Player : MonoBehaviour
                 
             }
         }
+        if(collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle"))
+        {
+           RestartGame();
+
+        }
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     

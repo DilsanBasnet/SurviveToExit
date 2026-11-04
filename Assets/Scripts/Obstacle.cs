@@ -8,12 +8,13 @@ public class Obstacle : MonoBehaviour
         
    if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Rocket"))
         {
+            
          RestartGame();
 
         } 
         }
 
-    private void OerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") || collision.CompareTag("Rocket"))
         {
@@ -24,6 +25,6 @@ public class Obstacle : MonoBehaviour
     private void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+
     }
 }

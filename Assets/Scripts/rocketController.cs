@@ -153,6 +153,11 @@ public class rocketController : MonoBehaviour
             UpdateUI();
         }
 
+        else if(isPiloting && (collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle") || collision.CompareTag("Spikes")))
+        {
+            RestartGame();
+        }
+
 
     }
 
@@ -174,7 +179,7 @@ public class rocketController : MonoBehaviour
             }
         }
 
-        else if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground"))
+        else if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Spikes"))
         {
             RestartGame();
         }

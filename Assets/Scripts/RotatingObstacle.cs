@@ -11,7 +11,7 @@ public class RotatingObstacle : MonoBehaviour
     }
 
 
-    private void OisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Rocket"))
         {
@@ -29,7 +29,7 @@ public class RotatingObstacle : MonoBehaviour
 
     private void RestartGame()
     {
-        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

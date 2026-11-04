@@ -1,49 +1,26 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FallRespawn : MonoBehaviour
 {
-   public Transform respawnPoint;
-   
-   public float respawnDelay = 1f;
-   private bool isRespawing = false;
-
+   private bool isRestarting = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("DeathZone") && !isRespawing)
+        if((collision.CompareTag("DeathZone") || collision.gameObject.CompareTag("Deathzone")) && !isRestarting)
         {
-            StartCoroutine(RespawnCoroutine());
+           isRestarting = true;
+           SceneManager.LoadScene(SceneManager.GetActiveScene().name) ; 
         }
-
-
     }
 
-    private IEnumerator RespawnCoroutine()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-       isRespawing = true;
-
-       Rigidbody2D rb = GetComponent<Rigidbody2D>();
-
-       if(rb != null)
+        if(collision.gameObject.CompareTag("DeathZone") && !isRestarting)
         {
-            rb.linearVelocity = Vector2.zero;
-            rb.simulated = false;
+            isRestarting = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        yield return new WaitForSeconds(respawnDelay);
-
-        if(respawnPoint != null)
-        {
-            transform.position = respawnPoint.position;
-        }
-
-
-        if(rb != null)
-        {
-            rb.simulated = true;
-
-        }
-        isRespawing = false;
     }
 }
