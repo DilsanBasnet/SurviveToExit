@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Coin
   - Fuel
+  - LandingPad
   layers:
   - Default
   - TransparentFX

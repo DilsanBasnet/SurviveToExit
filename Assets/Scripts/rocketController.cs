@@ -3,6 +3,7 @@ using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.Rendering.UI;
 
 public class rocketController : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class rocketController : MonoBehaviour
 
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI fuelText;
+
+    public float maxLandingSpeed = 4f;
+    public string nextLevelName = "Level2";
+
 
 
 
@@ -147,10 +152,31 @@ public class rocketController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(isPiloting && (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground")))
+       if(!isPiloting) return;
+       if(collision.gameObject.CompareTag("LandingPad"))
+        {
+            float landingSpeed = rb.linearVelocity.magnitude;
+
+            if(landingSpeed <= maxLandingSpeed)
+            {
+                LoadNextLevel();
+            }
+             else
+            {
+                RestartGame();
+
+            }
+        }
+
+        else if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground"))
         {
             RestartGame();
         }
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(nextLevelName);
     }
 
 
