@@ -4330,6 +4330,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: befd0cba71bba8944a8f39d5b40c7a15, type: 3}
+--- !u!1 &1269449428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269449430}
+  - component: {fileID: 1269449429}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1269449429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269449428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08408f0e75b35f469ec287587113f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  totalCoins: 0
+--- !u!4 &1269449430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269449428}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.34779, y: 17.23478, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411568567
 GameObject:
   m_ObjectHideFlags: 0
@@ -5085,7 +5130,7 @@ MonoBehaviour:
   coinText: {fileID: 1711153879}
   fuelText: {fileID: 1411568569}
   maxLandingSpeed: 4
-  nextLevelName: Level2
+  nextLevelName: Level3
 --- !u!50 &1732092747
 Rigidbody2D:
   serializedVersion: 5
@@ -5113,8 +5158,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!60 &1732092748
-PolygonCollider2D:
+--- !u!61 &1732092748
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5147,7 +5192,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.017779589, y: 0.08179057}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5157,28 +5202,8 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.27880427, y: 0.36793786}
-      - {x: 0.12992164, y: 0.78726053}
-      - {x: 0.0059203487, y: 0.85787886}
-      - {x: -0.11099993, y: 0.7963685}
-      - {x: -0.28959322, y: 0.39289063}
-      - {x: -0.26933563, y: -0.05779493}
-      - {x: -0.27196202, y: -0.17954245}
-      - {x: -0.47047913, y: -0.34495813}
-      - {x: -0.47527307, y: -0.69650453}
-      - {x: -0.3563467, y: -0.691631}
-      - {x: -0.28126907, y: -0.5677256}
-      - {x: -0.005418822, y: -0.43002754}
-      - {x: 0.17173961, y: -0.52972335}
-      - {x: 0.2823115, y: -0.56447685}
-      - {x: 0.35888198, y: -0.70500207}
-      - {x: 0.4930389, y: -0.70242614}
-      - {x: 0.48168167, y: -0.35165498}
-      - {x: 0.28023916, y: -0.1812361}
-      - {x: 0.28814664, y: -0.08601126}
-  m_UseDelaunayMesh: 1
+  m_Size: {x: 0.5803796, y: 1.4480703}
+  m_EdgeRadius: 0
 --- !u!1 &1755872500
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,3 +5812,4 @@ SceneRoots:
   - {fileID: 986279863}
   - {fileID: 2030739177}
   - {fileID: 1862966871}
+  - {fileID: 1269449430}
