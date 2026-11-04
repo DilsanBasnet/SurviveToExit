@@ -132,12 +132,11 @@ public class rocketController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        Debug.Log("Hit Object: " + collision.gameObject.name + "with tag: " + collision.tag);
         if(collision.CompareTag("Coin"))
         {
             if(GameManager.Instance != null)
             {
-                GameManager.Instance.AddCoins(1);
+                GameManager.Instance.AddRocketCoins(1);
             }
 
             Destroy(collision.gameObject);
@@ -153,7 +152,7 @@ public class rocketController : MonoBehaviour
             UpdateUI();
         }
 
-        else if(isPiloting && (collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle") || collision.CompareTag("Spikes")))
+        else if(isPiloting && (collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle")))
         {
             RestartGame();
         }
@@ -195,8 +194,8 @@ public class rocketController : MonoBehaviour
     {
         if(coinText != null)
         {
-            int displayCoins = (GameManager.Instance != null) ? GameManager.Instance.totalCoins : 0;
-            coinText.text = "Total Coins :  " + displayCoins;
+            int displayCoins = (GameManager.Instance != null) ? GameManager.Instance.rocketCoins : 0;
+            coinText.text = "COINS :" + displayCoins;
 
         }
 

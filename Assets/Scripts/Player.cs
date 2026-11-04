@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -46,6 +47,8 @@ public class Player : MonoBehaviour
     private bool isTouchingRightWall;
     private bool isTouchingLeftWall;
 
+    public TextMeshProUGUI playerCoinText;
+
 
 
     void Start()
@@ -57,6 +60,7 @@ public class Player : MonoBehaviour
         {
             anim = GetComponent<Animator>();
         }
+        UpdatePlayerUI();
 
     }
 
@@ -230,7 +234,16 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Rocket"))
+        if(collision.CompareTag("PlayerCoin"))
+        {
+            if(GameManager.Instance != null)
+            {
+                GameManager.Instance.AddPlayerCoins(1);
+            }
+            Destroy(collision.gameObject);
+            UpdatePlayerUI();
+        }
+        else if(collision.CompareTag("Rocket"))
         {
          rocketController rocket = collision.GetComponent<rocketController>();
          
@@ -244,6 +257,16 @@ public class Player : MonoBehaviour
         if(collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle"))
         {
            RestartGame();
+
+        }
+    }
+
+    private void UpdatePlayerUI()
+    {
+        if(playerCoinText != null)
+        {
+            int displayPlayerCoins = (GameManager.Instance != null)  ? GameManager.Instance.PlayerCoins : 0;
+            playerCoinText.text = "GEMS : " + displayPlayerCoins;
 
         }
     }

@@ -4,7 +4,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int totalCoins = 0;
+    public int rocketCoins  = 0;
+    public int PlayerCoins = 0;
+
 
     void Awake()
     {
@@ -19,9 +21,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddCoins(int amount)
+public void AddRocketCoins(int amount)
     {
-        totalCoins += amount; }
+        rocketCoins += amount;
+
+    }
+
+    public void AddPlayerCoins(int amount)
+    {
+        PlayerCoins += amount;
+        
+    }
 
     }
 

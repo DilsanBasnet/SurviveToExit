@@ -11,6 +11,8 @@ TagManager:
   - Coin
   - Fuel
   - LandingPad
+  - Obstacle
+  - PlayerCoin
   layers:
   - Default
   - TransparentFX
