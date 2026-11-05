@@ -92,8 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectMoveOnTrigger
   playerTag: Player
-  allowParentTagCheck: 1
-  triggerClip: {fileID: 0}
+  allowParentTagCheck: 0
+  triggerClip: {fileID: 8300000, guid: 05fa98adc98a3e046a26fc3660749c88, type: 3}
   action: 0
   actionDelay: 0
   moveTarget: {fileID: 0}

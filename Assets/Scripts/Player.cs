@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
 
     public Vector2 groundCheckSize = new Vector2(0.2f, 0.1f);
     public LayerMask groundLayer;
+    
 
 
     public Transform wallCheckRight;
