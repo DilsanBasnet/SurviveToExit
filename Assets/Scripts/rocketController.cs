@@ -23,6 +23,10 @@ public class rocketController : MonoBehaviour
     public GameObject playerCameraObject;
     public GameObject rocketCameraObject;
 
+    public ParticleSystem explosionParticles;
+
+    private bool isCrashing = false;
+
 
     private Rigidbody2D rb;
 
@@ -180,7 +184,7 @@ public class rocketController : MonoBehaviour
 
         else if(isPiloting && (collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle")))
         {
-            RestartGame();
+            CrashAndRestart();
         }
 
 
@@ -199,14 +203,14 @@ public class rocketController : MonoBehaviour
             }
              else
             {
-                RestartGame();
+                CrashAndRestart();
 
             }
         }
 
         else if(collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Spikes"))
         {
-            RestartGame();
+            CrashAndRestart();
         }
     }
 
@@ -232,5 +236,45 @@ public class rocketController : MonoBehaviour
     private void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void CrashAndRestart()
+    {
+       if(isCrashing) return;
+       isCrashing = true;
+       isPiloting = false;
+
+       if(rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+        }
+
+        if(spriteTransform != null)
+        {
+            SpriteRenderer sr = spriteTransform.GetComponent<SpriteRenderer>();
+            if(sr != null)  sr.enabled = false;
+
+        }
+
+        if(explosionParticles != null)
+        {
+            explosionParticles.transform.position = transform.position;
+            explosionParticles.gameObject.SetActive(true);
+            explosionParticles.Play();
+
+            float duration = explosionParticles.main.duration;
+            StartCoroutine(RestartAfterDelay(duration));
+        }
+        else
+        {
+            RestartGame();
+        }
+    }
+
+    private System.Collections.IEnumerator RestartAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        RestartGame();
     }
 }
