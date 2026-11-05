@@ -18,8 +18,11 @@ public class rocketController : MonoBehaviour
     public CinemachineCamera cinemachineCam;
     public Transform playertransform;
 
-
     public bool useFixedCameraForPlayer = true;
+
+    public GameObject playerCameraObject;
+    public GameObject rocketCameraObject;
+
 
     private Rigidbody2D rb;
 
@@ -55,7 +58,10 @@ public class rocketController : MonoBehaviour
         currentFuel = maxFuel;
         UpdateUI();
 
-        if(cinemachineCam != null)
+        if(playerCameraObject != null ) playerCameraObject.SetActive(true);
+        if(rocketCameraObject != null) rocketCameraObject.SetActive(false);
+
+        if(cinemachineCam != null && playerCameraObject == null) 
         {
             if(useFixedCameraForPlayer)
             {
@@ -92,11 +98,16 @@ public class rocketController : MonoBehaviour
 
         }
 
-        if(cinemachineCam != null)
+        if(playerCameraObject != null && rocketCameraObject != null)
+        {
+            playerCameraObject.SetActive(false);
+            rocketCameraObject.SetActive(true);
+
+        }
+        else if(cinemachineCam != null)
         {
             cinemachineCam.gameObject.SetActive(true);
             cinemachineCam.Follow = transform;
-
         }
     }
 
