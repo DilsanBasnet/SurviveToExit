@@ -22,6 +22,11 @@ public class Player : MonoBehaviour
     public Vector2 wallJumpingPower = new Vector2(8f, 12f);
 
 
+    public bool enableDoubleJump = true;
+    public bool enableWallJump = true;
+
+
+
 
     private bool isWallSliding;
     private bool isWallJumping;
@@ -103,10 +108,14 @@ public class Player : MonoBehaviour
             if(anim != null) anim.SetBool("isJumping", false);
                   }
 
-                  CheckWalls();
+if(enableWallJump)
+        {
+            CheckWalls();
                   WallSlide();
                   WallJumpLogic();
 
+        }
+                  
 
         bool jumpPressed = Keyboard.current != null && (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame);
 
