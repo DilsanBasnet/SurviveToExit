@@ -25,7 +25,14 @@ public class rocketController : MonoBehaviour
 
     public ParticleSystem explosionParticles;
 
+    public AudioClip coinCollectSfx;
+    public AudioClip fuelCollectSfx;
+    public AudioClip crashSfx;
+    public AudioClip successfullLandingSfx;
+
+
     private bool isCrashing = false;
+private bool hasLanded = false;
 
 
     private Rigidbody2D rb;
@@ -117,7 +124,7 @@ public class rocketController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!isPiloting) 
+        if(!isPiloting || hasLanded) 
         return;
 
         float moveHorizontal = 0f;
@@ -169,6 +176,7 @@ public class rocketController : MonoBehaviour
                 GameManager.Instance.AddRocketCoins(1);
             }
 
+PlaySound(coinCollectSfx);
             Destroy(collision.gameObject);
             UpdateUI();
         }
@@ -178,6 +186,7 @@ public class rocketController : MonoBehaviour
             currentFuel = maxFuel; 
             isOutOfFuel = false;
             rb.gravityScale = 0.5f; 
+            PlaySound(fuelCollectSfx);
             Destroy(collision.gameObject);
             UpdateUI();
         }
@@ -192,14 +201,14 @@ public class rocketController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       if(!isPiloting) return;
+       if(!isPiloting || hasLanded) return;
        if(collision.gameObject.CompareTag("LandingPad"))
         {
             float landingSpeed = rb.linearVelocity.magnitude;
 
             if(landingSpeed <= maxLandingSpeed)
             {
-                LoadNextLevel();
+                HandleSuccessfulLanding();
             }
              else
             {
@@ -256,6 +265,7 @@ public class rocketController : MonoBehaviour
             if(sr != null)  sr.enabled = false;
 
         }
+        PlaySound(crashSfx);
 
         if(explosionParticles != null)
         {
@@ -277,4 +287,36 @@ public class rocketController : MonoBehaviour
         yield return new WaitForSeconds(delay);
         RestartGame();
     }
+
+    private void HandleSuccessfulLanding()
+    {
+        hasLanded = true;
+        if(rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+
+        }
+
+        PlaySound(successfullLandingSfx);
+
+        float delay = successfullLandingSfx != null ? successfullLandingSfx.length : 1.5f;
+        StartCoroutine(LoadNextLevelAfterDelay(delay));
+    }
+
+    private System.Collections.IEnumerator LoadNextLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay) ;
+        SceneManager.LoadScene(nextLevelName);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if(clip != null)
+        {
+            AudioSource.PlayClipAtPoint(clip, transform.position);
+        }
+    }
+
+
 }

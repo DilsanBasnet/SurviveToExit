@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     public Vector2 groundCheckSize = new Vector2(0.2f, 0.1f);
     public LayerMask groundLayer;
-    
+
 
 
     public Transform wallCheckRight;
@@ -25,20 +25,12 @@ public class Player : MonoBehaviour
 
     public bool enableDoubleJump = true;
     public bool enableWallJump = true;
-
-
-
-
     private bool isWallSliding;
     private bool isWallJumping;
     private float wallJumpingDirection;
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.4f;
     private float wallJumpingTime = 0.2f;
-
-    
-
-
     public Animator anim;
 
     private Rigidbody2D rb;
@@ -55,6 +47,14 @@ public class Player : MonoBehaviour
 
     public TextMeshProUGUI playerCoinText;
 
+    public AudioClip jumpSfx;
+    public AudioClip coinCollectSfx;
+    public AudioClip deathSfx;
+
+    private bool isDead = false;
+    private AudioSource audioSource;
+
+
 
 
     void Start()
@@ -62,6 +62,12 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D> ();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+                   
+                    }
         if(anim == null)
         {
             anim = GetComponent<Animator>();
@@ -72,6 +78,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(isDead) return;
+
         move = 0f;
 
     if(Keyboard.current != null)
@@ -139,12 +147,14 @@ if(enableWallJump)
                 spriteRenderer.flipX = wallJumpingDirection > 0 ? false : true;
 
                 isWallJumping = false;
+                PlaySound(jumpSfx);
 
             }
            else  if(Grounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump);
                 if(anim != null) anim.SetBool("isJumping", true) ;
+                PlaySound(jumpSfx);
                 
                         }
 
@@ -153,6 +163,7 @@ if(enableWallJump)
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump) ;
                 canDoubleJump = false;
                 if(anim != null) anim.SetBool("isJumping", true);
+                PlaySound(jumpSfx);
             }
         }
 
@@ -222,7 +233,7 @@ if(enableWallJump)
         }
         if(other.gameObject.CompareTag("Obstacle"))
         {
-            RestartGame();
+            TriggerDeath();
         }
     }
     private void OnCollisionExit2D(Collision2D other)
@@ -242,6 +253,7 @@ if(enableWallJump)
             {
                 GameManager.Instance.AddPlayerCoins(1);
             }
+            PlaySound(coinCollectSfx);
             Destroy(collision.gameObject);
             UpdatePlayerUI();
         }
@@ -258,8 +270,36 @@ if(enableWallJump)
         }
         if(collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle"))
         {
-           RestartGame();
+           TriggerDeath();
 
+        }
+    }
+    private void TriggerDeath()
+    {
+        if(isDead) return;
+        isDead = true;
+
+        PlaySound(deathSfx);
+
+        if(spriteRenderer != null) spriteRenderer.enabled = false;
+        if(rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+
+        }
+
+        Collider2D col = GetComponent<Collider2D>();
+        if(col != null) col.enabled = false;
+
+        Invoke(nameof(RestartGame), 0.8f);
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if(clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 
@@ -279,8 +319,10 @@ if(enableWallJump)
     }
 
     
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
+
+        if(isDead) return;
+        
         if(!isWallJumping)
         {
             rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y) ;

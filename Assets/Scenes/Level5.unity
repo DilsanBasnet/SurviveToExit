@@ -189,6 +189,9 @@ MonoBehaviour:
   enableWallJump: 0
   anim: {fileID: 166264747}
   playerCoinText: {fileID: 250557829}
+  jumpSfx: {fileID: 8300000, guid: 64409042f0def6d42a48a9526d12bfb6, type: 3}
+  coinCollectSfx: {fileID: 8300000, guid: 256fa78ef139d7b4e898098b24e4fdb8, type: 3}
+  deathSfx: {fileID: 8300000, guid: 2bf991648e0177e4abb16e327acaf4e2, type: 3}
 --- !u!61 &11267399
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10799,6 +10802,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1711153879}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: crashSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ee3cabd6785e9a4b86db25ad0a3eeb9, type: 3}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: fuelText
       value: 
       objectReference: {fileID: 1411568569}
@@ -10810,6 +10817,14 @@ PrefabInstance:
       propertyPath: cinemachineCam
       value: 
       objectReference: {fileID: 894871425}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: coinCollectSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 256fa78ef139d7b4e898098b24e4fdb8, type: 3}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: fuelCollectSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: bdf252cc801f1114e9aedc3f2083cd49, type: 3}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: maxLandingSpeed
       value: 2
@@ -10830,6 +10845,10 @@ PrefabInstance:
       propertyPath: rocketCameraObject
       value: 
       objectReference: {fileID: 1824263734}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: successfullLandingSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d65a14b4465d4ff41bafb640cd2c9cb8, type: 3}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: useFixedCameraForPlayer
       value: 1
@@ -13216,11 +13235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.69
+      value: 7.49
       objectReference: {fileID: 0}
     - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 35.8
+      value: 35.86
       objectReference: {fileID: 0}
     - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
       propertyPath: m_LocalPosition.z
