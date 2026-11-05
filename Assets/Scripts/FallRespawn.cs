@@ -8,7 +8,7 @@ public class FallRespawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if((collision.CompareTag("DeathZone") || collision.gameObject.CompareTag("Deathzone")) && !isRestarting)
+        if((collision.CompareTag("DeathZone")) && !isRestarting)
         {
            isRestarting = true;
            SceneManager.LoadScene(SceneManager.GetActiveScene().name) ; 

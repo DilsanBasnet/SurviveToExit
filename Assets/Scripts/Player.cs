@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float jump = 12f;
     public Transform groundCheck;
 
-    public Vector2 groundCheckSize = new Vector2(0.5f, 0.1f);
+    public Vector2 groundCheckSize = new Vector2(0.2f, 0.1f);
     public LayerMask groundLayer;
 
 
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
 
         if(groundCheck != null)
         {
-            Grounded = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, groundLayer);
+            Grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.14f, groundLayer);
         }
 
         if(Grounded)
@@ -115,6 +115,13 @@ if(enableWallJump)
                   WallJumpLogic();
 
         }
+        else
+        {
+            isWallJumping = false;
+            isWallSliding = false;
+            wallJumpingCounter = 0f;
+
+        }
                   
 
         bool jumpPressed = Keyboard.current != null && (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame);
@@ -122,7 +129,7 @@ if(enableWallJump)
         if(jumpPressed)
         {
 
-            if(isWallJumping)
+            if(enableWallJump && wallJumpingCounter > 0)
             {
                 rb.linearVelocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
                 wallJumpingCounter = 0f;
@@ -140,7 +147,7 @@ if(enableWallJump)
                 
                         }
 
-            else if(canDoubleJump)
+            else if(enableDoubleJump && canDoubleJump)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jump) ;
                 canDoubleJump = false;
@@ -171,8 +178,6 @@ if(enableWallJump)
         {
             wallJumpingDirection = isTouchingRightWall ? -1f : 1f;
             wallJumpingCounter = wallJumpingTime;
-            CancelInvoke(nameof(StopWallJumping));
-
         }
         else
         {
@@ -204,21 +209,8 @@ if(enableWallJump)
         if(wallJumpingCounter > 0 && jumpPressed)
         {
             isWallJumping = true;
-            wallJumpingDirection = spriteRenderer.flipX ? 1f : -1f;
-
-            rb.linearVelocity = new Vector2(wallJumpingDirection * wallJumpingPower.x, wallJumpingPower.y);
-
-            wallJumpingCounter = 0f;
-
-            Invoke(nameof(StopWallJumping), wallJumpingDuration);
         }
     }
-
-    private void StopWallJumping()
-    {
-        isWallJumping = false;
-    }
-    
 
     private void OnCollisionEnter2D(Collision2D other)
     {

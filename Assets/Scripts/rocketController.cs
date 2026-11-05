@@ -3,13 +3,11 @@ using Unity.Cinemachine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.Rendering.UI;
 
 public class rocketController : MonoBehaviour
 {
     public float thrustPower = 12f;
     public float steeringSpeed = 8f;
-    // public float upwardGravity = 1.5f;
 
    public float maxtiltAngle = 25f;
    public float tiltsmoothSpeed = 10f;
@@ -21,7 +19,10 @@ public class rocketController : MonoBehaviour
     public Transform playertransform;
 
 
+    public bool useFixedCameraForPlayer = true;
+
     private Rigidbody2D rb;
+
     private BoxCollider2D boxCollider;
     private bool isPiloting = false;
     private bool isOutOfFuel = false;
@@ -54,9 +55,22 @@ public class rocketController : MonoBehaviour
         currentFuel = maxFuel;
         UpdateUI();
 
+        if(cinemachineCam != null)
+        {
+            if(useFixedCameraForPlayer)
+            {
+                cinemachineCam.gameObject.SetActive(false);
+            }
+            else
+            {
+                cinemachineCam.gameObject.SetActive(true);
 
-
-
+                if(playertransform != null)
+                {
+                    cinemachineCam.Follow = playertransform;
+                }
+            }
+        }
     }
 
     public void StartPiloting()
@@ -80,6 +94,7 @@ public class rocketController : MonoBehaviour
 
         if(cinemachineCam != null)
         {
+            cinemachineCam.gameObject.SetActive(true);
             cinemachineCam.Follow = transform;
 
         }
