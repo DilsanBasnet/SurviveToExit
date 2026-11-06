@@ -29,6 +29,7 @@ public class rocketController : MonoBehaviour
     public AudioClip fuelCollectSfx;
     public AudioClip crashSfx;
     public AudioClip successfullLandingSfx;
+    public AudioClip rocketFlightLoopSfx;
 
 
     private bool isCrashing = false;
@@ -55,6 +56,8 @@ private bool hasLanded = false;
     public float maxLandingSpeed = 4f;
     public string nextLevelName = "Level2";
 
+    private AudioSource audioSource;
+
 
 
 
@@ -65,6 +68,13 @@ private bool hasLanded = false;
         boxCollider = GetComponent<BoxCollider2D>();
         if(spriteTransform == null) 
         spriteTransform = transform;
+
+        audioSource = GetComponent<AudioSource>();
+
+        if(audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         currentFuel = maxFuel;
         UpdateUI();
@@ -107,6 +117,13 @@ private bool hasLanded = false;
             rb.gravityScale = 0.5f;
             rb.linearDamping = 1.5f;
 
+        }
+
+        if(rocketFlightLoopSfx != null && audioSource != null)
+        {
+            audioSource.clip = rocketFlightLoopSfx;
+            audioSource.loop = true;
+            audioSource.Play();
         }
 
         if(playerCameraObject != null && rocketCameraObject != null)
@@ -253,6 +270,11 @@ PlaySound(coinCollectSfx);
        isCrashing = true;
        isPiloting = false;
 
+       if(audioSource != null)
+        {
+            audioSource.Stop();
+        }
+
        if(rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -291,6 +313,11 @@ PlaySound(coinCollectSfx);
     private void HandleSuccessfulLanding()
     {
         hasLanded = true;
+
+        if(audioSource != null)
+        {
+            audioSource.Stop();
+        }
         if(rb != null)
         {
             rb.linearVelocity = Vector2.zero;
@@ -312,9 +339,9 @@ PlaySound(coinCollectSfx);
 
     private void PlaySound(AudioClip clip)
     {
-        if(clip != null)
+        if(clip != null && audioSource != null)
         {
-            AudioSource.PlayClipAtPoint(clip, transform.position);
+           audioSource.PlayOneShot(clip);
         }
     }
 
