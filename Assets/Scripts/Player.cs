@@ -231,7 +231,7 @@ if(enableWallJump)
             if(anim != null)  anim.SetBool("isJumping", false);
 
         }
-        if(other.gameObject.CompareTag("Obstacle"))
+        if(other.gameObject.CompareTag("Obstacle") || other.gameObject.GetComponent<Obstacle>() != null)
         {
             TriggerDeath();
         }
@@ -268,7 +268,7 @@ if(enableWallJump)
                 
             }
         }
-        if(collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle"))
+        if(collision.CompareTag("DeathZone") || collision.CompareTag("Obstacle") || collision.GetComponent<Obstacle>() != null)
         {
            TriggerDeath();
 
@@ -278,6 +278,14 @@ if(enableWallJump)
     {
         if(isDead) return;
         isDead = true;
+
+        MonoBehaviour fallRespawnScript = GetComponent("FallRespawn") as MonoBehaviour;
+
+        if(fallRespawnScript != null)
+        {
+            fallRespawnScript.enabled = false;
+
+        }
 
         PlaySound(deathSfx);
 
@@ -293,6 +301,11 @@ if(enableWallJump)
         if(col != null) col.enabled = false;
 
         Invoke(nameof(RestartGame), 0.8f);
+    }
+
+    public void TriggerExternalDeath()
+    {
+        TriggerDeath();
     }
 
     private void PlaySound(AudioClip clip)

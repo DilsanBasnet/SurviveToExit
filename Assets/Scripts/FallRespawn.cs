@@ -8,11 +8,21 @@ public class FallRespawn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if((collision.CompareTag("DeathZone")) && !isRestarting)
+        if((collision.CompareTag("DeathZone") ) && !isRestarting)
         {
-           isRestarting = true;
-           SceneManager.LoadScene(SceneManager.GetActiveScene().name) ; 
-        }
+            isRestarting = true;
+
+            Player player = GetComponent<Player> ();
+            
+            if(player != null)
+            {
+                player.TriggerExternalDeath();
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+          }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -20,7 +30,17 @@ public class FallRespawn : MonoBehaviour
         if(collision.gameObject.CompareTag("DeathZone") && !isRestarting)
         {
             isRestarting = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            Player player = GetComponent<Player>();
+
+            if(player != null)
+            {
+                player.TriggerExternalDeath();
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
 }
