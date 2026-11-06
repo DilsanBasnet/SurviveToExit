@@ -19,6 +19,7 @@ public class LaserController : MonoBehaviour
    private float timer;
    private float nextInterval;
    private bool isFired = false;
+   public float laserVolume = 0.5f;
 
     void Start()
     {
@@ -67,14 +68,16 @@ public class LaserController : MonoBehaviour
         {
             laserLight.position = transform.position;
             laserLight.gameObject.SetActive(true);
-            float randomAngle = Random.Range(0f, 360f);
-            laserLight.rotation = Quaternion.Euler(0f, 0f, randomAngle);
+
+
+            float chosenAngle = Random.Range(minAngle, maxAngle);
+            laserLight.rotation = Quaternion.Euler(0f, 0f, chosenAngle);
             isFired = true;
 
     }
 
     if(laserSfx != null && audioSource != null) {
-        audioSource.PlayOneShot(laserSfx);
+        audioSource.PlayOneShot(laserSfx, laserVolume);
     }  }
 
     void ResetTimer()

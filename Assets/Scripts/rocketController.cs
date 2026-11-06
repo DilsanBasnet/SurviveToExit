@@ -344,6 +344,10 @@ PlaySound(coinCollectSfx);
            audioSource.PlayOneShot(clip);
         }
     }
+    public void TriggerExternalCrash()
+    {
+        CrashAndRestart();
+    }
 
 
 }

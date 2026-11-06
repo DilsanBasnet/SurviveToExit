@@ -261,6 +261,9 @@ MonoBehaviour:
   maxInterval: 3
   laserSpeed: 12
   maxTravelDistance: 60
+  minAngle: 0
+  maxAngle: 360
+  laserVolume: 0.02
 --- !u!1 &4899082157898530058
 GameObject:
   m_ObjectHideFlags: 0

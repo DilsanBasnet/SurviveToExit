@@ -24,7 +24,7 @@ public class LaserDamage : MonoBehaviour
 
             if(rocket != null)
             {
-                RestartScene();
+                rocket.TriggerExternalCrash();
             
             }
             else
@@ -51,7 +51,17 @@ public class LaserDamage : MonoBehaviour
         }
         else if ( collision.gameObject.CompareTag("Rocket"))
         {
-            RestartScene();
+           rocketController rocket = collision.gameObject.GetComponent<rocketController>();
+
+           if(rocket != null)
+            {
+                rocket.TriggerExternalCrash();
+            }
+            else
+            {
+                RestartScene();
+                
+            }
         }
     }
 
