@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -276,6 +277,8 @@ if(enableWallJump)
 
         }
     }
+
+    public CameraShake playerCameraShake;
     private void TriggerDeath()
     {
         if(isDead) return;
@@ -290,6 +293,11 @@ if(enableWallJump)
         }
 
         PlaySound(deathSfx);
+CinemachineImpulseSource impulseSource = GetComponent<CinemachineImpulseSource>();       
+if(impulseSource != null)
+        {
+            impulseSource.GenerateImpulse(0.5f);
+        }
 
         if(deathParticlePrefab != null)
         {

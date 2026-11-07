@@ -344,8 +344,17 @@ PlaySound(coinCollectSfx);
            audioSource.PlayOneShot(clip);
         }
     }
+
+    public CameraShake rocketCameraShake;
     public void TriggerExternalCrash()
     {
+       CinemachineImpulseSource impulseSource = GetComponent<CinemachineImpulseSource>();
+
+       if(impulseSource != null)
+        {
+            impulseSource.GenerateImpulse(1.0f);
+        }
+
         CrashAndRestart();
     }
 
