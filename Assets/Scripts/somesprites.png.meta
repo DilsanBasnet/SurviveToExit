@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: afb4cc5ba96d8d5489b5006c66e8b7f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4402818756999532108
+    second: somesprites_0
+  - first:
+      213: -4206942766332600898
+    second: somesprites_1
+  - first:
+      213: -5518761004720826176
+    second: somesprites_2
+  - first:
+      213: -6977307053299048403
+    second: somesprites_3
+  - first:
+      213: -1386188351566774789
+    second: somesprites_4
+  - first:
+      213: -7932767199905081347
+    second: somesprites_5
+  - first:
+      213: -7042109930911573818
+    second: somesprites_6
+  - first:
+      213: -3421342960250537540
+    second: somesprites_7
+  - first:
+      213: -6880273490392287892
+    second: somesprites_8
+  - first:
+      213: -2037025867949493643
+    second: somesprites_9
+  - first:
+      213: -5247217955892168412
+    second: somesprites_10
+  - first:
+      213: 57580435936170531
+    second: somesprites_11
+  - first:
+      213: -1263480410970200809
+    second: somesprites_12
+  - first:
+      213: -6693581415932891080
+    second: somesprites_13
+  - first:
+      213: -496210564498891809
+    second: somesprites_14
+  - first:
+      213: -6346197624293731091
+    second: somesprites_15
+  - first:
+      213: -8697139249470998014
+    second: somesprites_16
+  - first:
+      213: -8387552568761871660
+    second: somesprites_17
+  - first:
+      213: 7122965428535026866
+    second: somesprites_18
+  - first:
+      213: -403028620842469305
+    second: somesprites_19
+  - first:
+      213: -1760387268164366839
+    second: somesprites_20
+  - first:
+      213: -6957523868251262094
+    second: somesprites_21
+  - first:
+      213: -8656891011199928003
+    second: somesprites_22
+  - first:
+      213: 8751348098724769849
+    second: somesprites_23
+  - first:
+      213: -3231205869898677436
+    second: somesprites_24
+  - first:
+      213: -2021669179304870893
+    second: somesprites_25
+  - first:
+      213: 2086955639049010401
+    second: somesprites_26
+  - first:
+      213: -6369694905405270737
+    second: somesprites_27
+  - first:
+      213: 4785109639496221249
+    second: somesprites_28
+  - first:
+      213: -189469856868393989
+    second: somesprites_29
+  - first:
+      213: 4670520168907493697
+    second: somesprites_30
+  - first:
+      213: -5111338208895136606
+    second: somesprites_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: somesprites_0
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 655
+        width: 139
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1bd9aeaab06e2c0800000000000000
+      internalID: -4402818756999532108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_1
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 840
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd9856e7dfed95c0800000000000000
+      internalID: -4206942766332600898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 722
+        width: 174
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c856591b1c6963b0800000000000000
+      internalID: -5518761004720826176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 723
+        width: 174
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20684fc330ab2f90800000000000000
+      internalID: -6977307053299048403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_4
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 667
+        width: 230
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfdf311e90543cce0800000000000000
+      internalID: -1386188351566774789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_5
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 653
+        width: 155
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df799c3e24629e190800000000000000
+      internalID: -7932767199905081347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_6
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 653
+        width: 140
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8d3ca1456654e90800000000000000
+      internalID: -7042109930911573818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_7
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 658
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9bb7764b2f480d0800000000000000
+      internalID: -3421342960250537540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_8
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 462
+        width: 180
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6571a7b6bb5480a0800000000000000
+      internalID: -6880273490392287892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_9
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 558
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572b69604c70bb3e0800000000000000
+      internalID: -2037025867949493643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_10
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 458
+        width: 195
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 429feffe1132e27b0800000000000000
+      internalID: -5247217955892168412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_11
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 458
+        width: 196
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 322dcf5f9119cc000800000000000000
+      internalID: 57580435936170531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_12
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 458
+        width: 77
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715e47ba247377ee0800000000000000
+      internalID: -1263480410970200809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_13
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 469
+        width: 93
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 830f9249a2f9b13a0800000000000000
+      internalID: -6693581415932891080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_14
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 465
+        width: 89
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb5f31ee1b1d19f0800000000000000
+      internalID: -496210564498891809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 462
+        width: 180
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de45b8162e6cde7a0800000000000000
+      internalID: -6346197624293731091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_16
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 223
+        width: 264
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a7c299eed8d4780800000000000000
+      internalID: -8697139249470998014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 216
+        width: 224
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d2980cb06d699b80800000000000000
+      internalID: -8387552568761871660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_18
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 240
+        width: 258
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b4e733715bd9d260800000000000000
+      internalID: 7122965428535026866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_19
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 255
+        width: 368
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7487e5cca97286af0800000000000000
+      internalID: -403028620842469305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_20
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 18
+        width: 149
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e41f54b19d197e0800000000000000
+      internalID: -1760387268164366839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 18
+        width: 152
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273f49487e8e17f90800000000000000
+      internalID: -6957523868251262094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_22
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 16
+        width: 227
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39f722dd7b8cd780800000000000000
+      internalID: -8656891011199928003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_23
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 19
+        width: 88
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930b74aaab8037970800000000000000
+      internalID: 8751348098724769849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_24
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 114
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443488881637823d0800000000000000
+      internalID: -3231205869898677436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_25
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 112
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c7d2ab79691f3e0800000000000000
+      internalID: -2021669179304870893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_26
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 21
+        width: 155
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ecb387b81b56fc10800000000000000
+      internalID: 2086955639049010401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_27
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 121
+        width: 27
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2514bb4b3c4a97a0800000000000000
+      internalID: -6369694905405270737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_28
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 33
+        width: 68
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14248715ddf186240800000000000000
+      internalID: 4785109639496221249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_29
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 70
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfb17b54b2ede5df0800000000000000
+      internalID: -189469856868393989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_30
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 25
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1415700295501d040800000000000000
+      internalID: 4670520168907493697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: somesprites_31
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 19
+        width: 144
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac8ce3eaf0e019b0800000000000000
+      internalID: -5111338208895136606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      somesprites_0: -4402818756999532108
+      somesprites_1: -4206942766332600898
+      somesprites_10: -5247217955892168412
+      somesprites_11: 57580435936170531
+      somesprites_12: -1263480410970200809
+      somesprites_13: -6693581415932891080
+      somesprites_14: -496210564498891809
+      somesprites_15: -6346197624293731091
+      somesprites_16: -8697139249470998014
+      somesprites_17: -8387552568761871660
+      somesprites_18: 7122965428535026866
+      somesprites_19: -403028620842469305
+      somesprites_2: -5518761004720826176
+      somesprites_20: -1760387268164366839
+      somesprites_21: -6957523868251262094
+      somesprites_22: -8656891011199928003
+      somesprites_23: 8751348098724769849
+      somesprites_24: -3231205869898677436
+      somesprites_25: -2021669179304870893
+      somesprites_26: 2086955639049010401
+      somesprites_27: -6369694905405270737
+      somesprites_28: 4785109639496221249
+      somesprites_29: -189469856868393989
+      somesprites_3: -6977307053299048403
+      somesprites_30: 4670520168907493697
+      somesprites_31: -5111338208895136606
+      somesprites_4: -1386188351566774789
+      somesprites_5: -7932767199905081347
+      somesprites_6: -7042109930911573818
+      somesprites_7: -3421342960250537540
+      somesprites_8: -6880273490392287892
+      somesprites_9: -2037025867949493643
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

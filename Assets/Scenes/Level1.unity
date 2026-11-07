@@ -2192,6 +2192,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.20558916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.20558916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.26415092
+      objectReference: {fileID: 0}
     - target: {fileID: 2118066281611923318, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
       propertyPath: m_Name
       value: lineplatform (1)
@@ -3627,6 +3639,10 @@ PrefabInstance:
       propertyPath: enableDoubleJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: deathParticlePrefab
+      value: 
+      objectReference: {fileID: 4057922453157575502, guid: 6f9472367a817414491f94da223165a8, type: 3}
     - target: {fileID: 1805858805621903640, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_Size.x
       value: 0.80170584
@@ -4331,6 +4347,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.12522252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.12522252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881837767201787081, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.13207549
+      objectReference: {fileID: 0}
     - target: {fileID: 2118066281611923318, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
       propertyPath: m_Name
       value: lineplatform

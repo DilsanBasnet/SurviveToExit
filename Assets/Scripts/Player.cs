@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     public AudioClip coinCollectSfx;
     public AudioClip deathSfx;
 
+    public GameObject deathParticlePrefab;
+
     private bool isDead = false;
     private AudioSource audioSource;
 
@@ -288,6 +290,11 @@ if(enableWallJump)
         }
 
         PlaySound(deathSfx);
+
+        if(deathParticlePrefab != null)
+        {
+            Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        }
 
         if(spriteRenderer != null) spriteRenderer.enabled = false;
         if(rb != null)
