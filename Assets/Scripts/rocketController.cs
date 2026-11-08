@@ -242,7 +242,15 @@ PlaySound(coinCollectSfx);
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(nextLevelName);
+        if(SceneFader.Instance != null)
+        {
+            SceneFader.Instance.FadeToLevel(nextLevelName);
+        }
+
+        else
+        {
+            SceneManager.LoadScene(nextLevelName);
+        }
     }
 
 
@@ -261,7 +269,18 @@ PlaySound(coinCollectSfx);
 
     private void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       string currentSceneName = SceneManager.GetActiveScene().name;
+
+       if(SceneFader.Instance != null)
+        {
+            SceneFader.Instance.FadeToLevel(currentSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene(currentSceneName);
+        }
+
+
     }
 
     private void CrashAndRestart()
