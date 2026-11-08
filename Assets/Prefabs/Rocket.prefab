@@ -221,6 +221,16 @@ MonoBehaviour:
   spriteTransform: {fileID: 3776178349265610930}
   cinemachineCam: {fileID: 0}
   playertransform: {fileID: 0}
+  useFixedCameraForPlayer: 1
+  playerCameraObject: {fileID: 0}
+  rocketCameraObject: {fileID: 0}
+  explosionParticles: {fileID: 0}
+  coinCollectSfx: {fileID: 0}
+  fuelCollectSfx: {fileID: 0}
+  crashSfx: {fileID: 0}
+  successfullLandingSfx: {fileID: 0}
+  rocketFlightLoopSfx: {fileID: 0}
+  floatingTextPrefab: {fileID: 4512649002703414368, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
   maxFuel: 100
   fuelBurnRate: 12
   coinText: {fileID: 0}

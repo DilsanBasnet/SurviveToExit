@@ -208,6 +208,8 @@ MonoBehaviour:
   jumpSfx: {fileID: 8300000, guid: 64409042f0def6d42a48a9526d12bfb6, type: 3}
   coinCollectSfx: {fileID: 8300000, guid: 256fa78ef139d7b4e898098b24e4fdb8, type: 3}
   deathSfx: {fileID: 8300000, guid: 2bf991648e0177e4abb16e327acaf4e2, type: 3}
+  deathParticlePrefab: {fileID: 0}
+  floatingTextPrefab: {fileID: 4512649002703414368, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
 --- !u!114 &6374707975352523558
 MonoBehaviour:
   m_ObjectHideFlags: 0

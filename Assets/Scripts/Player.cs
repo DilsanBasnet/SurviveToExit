@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     public AudioClip deathSfx;
 
     public GameObject deathParticlePrefab;
+    public GameObject floatingTextPrefab;
 
     private bool isDead = false;
     private AudioSource audioSource;
@@ -255,6 +256,22 @@ if(enableWallJump)
             if(GameManager.Instance != null)
             {
                 GameManager.Instance.AddPlayerCoins(1);
+            }
+
+            if(floatingTextPrefab != null)
+            {
+               Canvas canvas = FindAnyObjectByType<Canvas>();
+        if(canvas != null)
+        {
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(collision.transform.position + new Vector3(0f, 0.5f, 0f));
+            GameObject textObj = Instantiate(floatingTextPrefab, screenPoint, Quaternion.identity, canvas.transform);
+            
+            TextMeshProUGUI tmp = textObj.GetComponent<TextMeshProUGUI>();
+            if(tmp != null)
+            {
+                tmp.text = "+1 GEMS";
+            }
+        }
             }
             PlaySound(coinCollectSfx);
             Destroy(collision.gameObject);

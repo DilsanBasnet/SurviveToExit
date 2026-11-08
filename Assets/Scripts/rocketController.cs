@@ -30,6 +30,8 @@ public class rocketController : MonoBehaviour
     public AudioClip crashSfx;
     public AudioClip successfullLandingSfx;
     public AudioClip rocketFlightLoopSfx;
+    public GameObject floatingTextPrefab;
+
 
 
     private bool isCrashing = false;
@@ -192,6 +194,24 @@ private bool hasLanded = false;
             {
                 GameManager.Instance.AddRocketCoins(1);
             }
+
+            if(floatingTextPrefab != null)
+            {
+Canvas canvas = FindAnyObjectByType<Canvas>();
+        if(canvas != null)
+        {
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(collision.transform.position + new Vector3(0f, 0.5f, 0f));
+            GameObject textObj = Instantiate(floatingTextPrefab, screenPoint, Quaternion.identity, canvas.transform);
+            
+            TextMeshProUGUI tmp = textObj.GetComponent<TextMeshProUGUI>();
+            if(tmp != null)
+            {
+                tmp.text = "+1 COINS";
+            }
+        }
+              
+            }
+
 
 PlaySound(coinCollectSfx);
             Destroy(collision.gameObject);

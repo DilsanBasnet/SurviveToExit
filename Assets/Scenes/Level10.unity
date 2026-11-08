@@ -10938,6 +10938,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 250557829}
     - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: floatingTextPrefab
+      value: 
+      objectReference: {fileID: 1691809588853370438, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: deathParticlePrefab
       value: 
       objectReference: {fileID: 4057922453157575502, guid: 6f9472367a817414491f94da223165a8, type: 3}
@@ -12873,6 +12877,10 @@ PrefabInstance:
       propertyPath: explosionParticles
       value: 
       objectReference: {fileID: 2070056357}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: floatingTextPrefab
+      value: 
+      objectReference: {fileID: 1691809588853370438, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: playerCameraObject
       value: 

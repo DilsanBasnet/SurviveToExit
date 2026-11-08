@@ -4529,7 +4529,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 5.54
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4554,7 +4554,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.46, y: 2.05, z: -10}
+  m_LocalPosition: {x: -2.4182, y: 0.81626, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6229,6 +6229,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 446780846}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: floatingTextPrefab
+      value: 
+      objectReference: {fileID: 1691809588853370438, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: playerCameraObject
       value: 
       objectReference: {fileID: 1044428949}
@@ -6381,6 +6385,10 @@ PrefabInstance:
       propertyPath: enableDoubleJump
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: floatingTextPrefab
+      value: 
+      objectReference: {fileID: 1691809588853370438, guid: c366b37a40fc90d44864dd3f382a77ec, type: 3}
     - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: deathParticlePrefab
       value: 
