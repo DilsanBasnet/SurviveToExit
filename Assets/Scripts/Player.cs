@@ -347,6 +347,6 @@ if(enableWallJump)
         if(!isWallJumping)
         {
             rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y) ;
-        }  
+        }
     }
 }
