@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,21 +13,50 @@ public class LevelGoal : MonoBehaviour
         {
             LevelSelectManager.CompleteLevel(currentLevelNumber);
 
-            int nextLevelNum = currentLevelNumber + 1;
-            string nextSceneName = "Level" + nextLevelNum;
+            AudioSource rocketAudio = collision.GetComponent<AudioSource>();
 
-            if(Application.CanStreamedLevelBeLoaded(nextSceneName))
+            if(rocketAudio == null)
             {
-                SceneManager.LoadScene(nextSceneName);
+                rocketAudio = collision.GetComponentInChildren<AudioSource>();
             }
 
-            else
+            GameObject rocketObj = GameObject.FindGameObjectWithTag("Rocket");
+
+            if(rocketObj != null)
             {
-                SceneManager.LoadScene("LevelsScene");
+                rocketController controller = rocketObj.GetComponent<rocketController>();
+
+                if(controller != null && controller.successfullLandingSfx != null)
+                {
+                    rocketAudio = rocketObj.GetComponent<AudioSource>();
+
+                    if(rocketAudio == null) rocketAudio = rocketObj.AddComponent<AudioSource>();
+
+                    rocketAudio.PlayOneShot(controller.successfullLandingSfx);
+                }
             }
-            
+
+            StartCoroutine(WaitAndLoadNextLevel());
+
         }
         
+    }
+
+    private IEnumerator WaitAndLoadNextLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        int nextLevelNum = currentLevelNumber + 1;
+        string nextSceneName = "Level" + nextLevelNum;
+
+        if(Application.CanStreamedLevelBeLoaded(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene("LevelsScene");
+        }
     }
 
 }

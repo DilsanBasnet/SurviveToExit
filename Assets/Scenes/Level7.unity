@@ -7447,7 +7447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
   currentLevelNumber: 7
-  levelSelectSceneName: LevelsScene
 --- !u!1 &667813806
 GameObject:
   m_ObjectHideFlags: 0
@@ -9013,6 +9012,100 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &1240555240
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1004466449360605562, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099284990580293110, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_Name
+      value: LANDINGPAD (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41172686
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5572749
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.67737025
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 93.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999966
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0026055325
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194490621673078789, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.299
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8099284990580293110, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1240555242}
+  m_SourcePrefab: {fileID: 100100000, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+--- !u!1 &1240555241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8099284990580293110, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+  m_PrefabInstance: {fileID: 1240555240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1240555242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240555241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba6de99428e0e04f98cc03ebc8d5355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
+  currentLevelNumber: 7
 --- !u!1 &1269449428
 GameObject:
   m_ObjectHideFlags: 0
@@ -24036,6 +24129,7 @@ SceneRoots:
   - {fileID: 8861523873610298275}
   - {fileID: 2037489585}
   - {fileID: 635887029}
+  - {fileID: 1240555240}
   - {fileID: 1831174591785339277}
   - {fileID: 667813807}
   - {fileID: 1783774243}
