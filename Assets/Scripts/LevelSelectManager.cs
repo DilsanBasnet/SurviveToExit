@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,7 +23,19 @@ public class LevelSelectManager : MonoBehaviour
 
     public Sprite lockedSprite;
 
+    public AudioClip buttonClickSfx;
+    private AudioSource audioSource;
+
     private const string PREF_KEY = "LevelUnlocked";
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if(audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     void Start()
     {
@@ -118,12 +131,35 @@ public class LevelSelectManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenuScene");
+        StartCoroutine(PlaySoundAndLoad("MainMenuScene"));
 
     }
 
     public void QuitGame()
     {
+        StartCoroutine(PlaySoundAndQuit());
+    }
+
+    private IEnumerator PlaySoundAndLoad(string sceneName)
+    {
+        if(buttonClickSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonClickSfx);
+        }
+
+        yield return new WaitForSecondsRealtime(0.15f);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator PlaySoundAndQuit()
+    {
+        if(buttonClickSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonClickSfx);
+        }
+        yield return new WaitForSecondsRealtime(0.15f);
+
         Application.Quit();
+
     }
 }

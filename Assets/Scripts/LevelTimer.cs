@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LevelTimer : MonoBehaviour
     public GameObject timeOutPanel;
 
     public AudioClip timeOverSfx;
+    public AudioClip buttonClickSfx;
     private AudioSource audioSource;
 
     
@@ -88,7 +90,21 @@ public class LevelTimer : MonoBehaviour
 
     public void PlayAgain()
     {
+        StartCoroutine(PlayClickAndRestart());
+    }
+
+    private IEnumerator PlayClickAndRestart()
+    {
+        if(buttonClickSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonClickSfx);
+        }
+
+        yield return new WaitForSecondsRealtime(0.2f);
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+
 }
