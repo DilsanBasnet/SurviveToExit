@@ -5,7 +5,6 @@ public class LevelGoal : MonoBehaviour
 {
   public int currentLevelNumber = 1;
 
-  public string levelSelectSceneName = "LevelsScene";
 
   private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +12,21 @@ public class LevelGoal : MonoBehaviour
         {
             LevelSelectManager.CompleteLevel(currentLevelNumber);
 
-            SceneManager.LoadScene(levelSelectSceneName); 
+            int nextLevelNum = currentLevelNumber + 1;
+            string nextSceneName = "Level" + nextLevelNum;
+
+            if(Application.CanStreamedLevelBeLoaded(nextSceneName))
+            {
+                SceneManager.LoadScene(nextSceneName);
+            }
+
+            else
+            {
+                SceneManager.LoadScene("LevelsScene");
+            }
+            
         }
+        
     }
+
 }
