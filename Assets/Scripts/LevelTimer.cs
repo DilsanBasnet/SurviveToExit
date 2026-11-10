@@ -8,6 +8,9 @@ public class LevelTimer : MonoBehaviour
     public TMP_Text timerText;
     public GameObject timeOutPanel;
 
+    public AudioClip timeOverSfx;
+    private AudioSource audioSource;
+
     
 
     public float LevelTimeLimit = 60f;
@@ -20,6 +23,13 @@ public class LevelTimer : MonoBehaviour
         remainingTime = LevelTimeLimit;
         isTiming = true;
         Time.timeScale = 1f;
+
+        audioSource = GetComponent<AudioSource>();
+
+        if(audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         if(timeOutPanel != null)
         {
@@ -61,6 +71,13 @@ public class LevelTimer : MonoBehaviour
 
     void TriggerTimeOut()
     {
+
+        if(timeOverSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(timeOverSfx);
+
+        }
+        
       if(timeOutPanel != null)
         {
             timeOutPanel.SetActive(true);

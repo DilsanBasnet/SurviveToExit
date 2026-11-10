@@ -45,5 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTimer
   timerText: {fileID: 0}
-  currentLevelNumber: 1
+  timeOutPanel: {fileID: 0}
+  timeOverSfx: {fileID: 8300000, guid: 1377ca2ce7f4db64b8f087674f46517b, type: 3}
   LevelTimeLimit: 30
