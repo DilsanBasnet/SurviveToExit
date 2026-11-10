@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
   pausePanel: {fileID: 4695133040249817058, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+  buttonClickSfx: {fileID: 8300000, guid: 6820bf6dd1f6b044fa324f1601393887, type: 3}
