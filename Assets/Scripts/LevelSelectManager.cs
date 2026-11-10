@@ -42,11 +42,13 @@ public class LevelSelectManager : MonoBehaviour
         for (int i = 0; i < levels.Length; i++)
         {
             int currentLevelNum = levels[i].levelNumber;
-            Image buttonImage = levels[i].buttonComponent.GetComponent<Image>();
+            Image buttonImage = levels[i].buttonComponent != null ? levels[i].buttonComponent.GetComponent<Image>() : null;
             Image tagImage = levels[i].statusTagObject != null ? levels[i].statusTagObject.GetComponent<Image>() : null;
 
             if(currentLevelNum <= unlockedLevel)
             {
+                if(levels[i].buttonComponent != null)
+
                levels[i].buttonComponent.interactable = true;
 
                if(buttonImage != null && unlockedSprite != null)
@@ -71,7 +73,9 @@ public class LevelSelectManager : MonoBehaviour
             }
             else
             {
+                if(levels[i].buttonComponent != null)
                 levels[i].buttonComponent.interactable = false;
+                
                 if(buttonImage != null && lockedSprite != null)
                 {
                     buttonImage.sprite = lockedSprite;

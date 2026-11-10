@@ -3046,6 +3046,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &281210035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9000908259409613683, guid: 3385c97d257fa7141bd42f71be65bd2b, type: 3}
+  m_PrefabInstance: {fileID: 377909791}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4067357f73d8e41b9371fcb3204394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseManager
 --- !u!1 &289164741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2118066281611923318, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
@@ -3365,6 +3376,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9000908259409613683, guid: 3385c97d257fa7141bd42f71be65bd2b, type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 812454688}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11021,6 +11036,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &812454688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4695133040249817058, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+  m_PrefabInstance: {fileID: 1159974734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894871423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4562999867659799626, guid: 67025f750a714a34fb7d1cfcd2077193, type: 3}
@@ -11825,6 +11845,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 831015038912955578, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 281210035}
+    - target: {fileID: 831015038912955578, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     - target: {fileID: 4229668082709947500, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11912,6 +11940,22 @@ PrefabInstance:
     - target: {fileID: 4695133040249817058, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5723046982585979756, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 281210035}
+    - target: {fileID: 5723046982585979756, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8995470207743875943, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 281210035}
+    - target: {fileID: 8995470207743875943, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13933,8 +13977,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8099284990580293110, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5123062344243301015}
   m_SourcePrefab: {fileID: 100100000, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+--- !u!1 &5123062344243301014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8099284990580293110, guid: 7ab9502c459214d4e9ef763e437769da, type: 3}
+  m_PrefabInstance: {fileID: 5123062344243301013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5123062344243301015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5123062344243301014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba6de99428e0e04f98cc03ebc8d5355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
+  currentLevelNumber: 5
+  levelSelectSceneName: LevelsScene
 --- !u!1001 &5346158348077890614
 PrefabInstance:
   m_ObjectHideFlags: 0
