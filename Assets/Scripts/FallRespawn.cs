@@ -16,6 +16,7 @@ public class FallRespawn : MonoBehaviour
             
             if(player != null)
             {
+                player.TriggerPlayerCameraShake(3.5f, 0.3f);
                 player.TriggerExternalDeath();
             }
             else
@@ -35,6 +36,7 @@ public class FallRespawn : MonoBehaviour
 
             if(player != null)
             {
+                player.TriggerPlayerCameraShake(3.5f, 0.3f);
                 player.TriggerExternalDeath();
             }
             else

@@ -13,6 +13,7 @@ public class Obstacle : MonoBehaviour
 
             if(player != null)
             {
+                player.TriggerPlayerCameraShake(3f, 0.3f);
                 player.TriggerExternalDeath();
 
             }   
@@ -20,7 +21,7 @@ public class Obstacle : MonoBehaviour
             {
                 RestartGame();
 
-            }         
+            }   
         } 
 
         else if(collision.gameObject.CompareTag("Rocket"))
@@ -29,7 +30,13 @@ public class Obstacle : MonoBehaviour
 
             if(rocket == null)
             {
-                RestartGame();
+                
+              rocket.TriggerRocketCameraShake(4.5f, 0.4f);
+              rocket.TriggerExternalCrash();
+            }
+            else
+            {
+                  RestartGame();
             }
         }
         }
@@ -42,6 +49,7 @@ public class Obstacle : MonoBehaviour
 
           if(player != null)
             {
+                player.TriggerPlayerCameraShake(3f, 0.3f);
                 player.TriggerExternalDeath();
             }
             else
@@ -55,6 +63,11 @@ public class Obstacle : MonoBehaviour
             rocketController rocket = collision.gameObject.GetComponent<rocketController>();
 
             if(rocket == null)
+            {
+                rocket.TriggerRocketCameraShake(4.5f, 0.4f);
+                rocket.TriggerExternalCrash();
+            }
+            else
             {
                 RestartGame();
             }

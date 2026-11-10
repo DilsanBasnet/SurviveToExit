@@ -6961,6 +6961,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1824263734}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: rocketCinemacineCam
+      value: 
+      objectReference: {fileID: 596127171993596674}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: rocketFlightLoopSfx
       value: 
       objectReference: {fileID: 8300000, guid: 1124c9959308c9547af31c47e7fa4198, type: 3}
@@ -8333,6 +8337,10 @@ PrefabInstance:
       propertyPath: deathParticlePrefab
       value: 
       objectReference: {fileID: 4057922453157575502, guid: 6f9472367a817414491f94da223165a8, type: 3}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: playerCinemachineCam
+      value: 
+      objectReference: {fileID: 894871425}
     - target: {fileID: 3733640592705164738, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_Name
       value: Player
@@ -8552,6 +8560,10 @@ PrefabInstance:
       propertyPath: LevelTimeLimit
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 4639390076011465615, guid: d8c3726fc91b5574c8ebf34c29bd974b, type: 3}
+      propertyPath: buttonClickSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6820bf6dd1f6b044fa324f1601393887, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9342,6 +9354,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
+--- !u!114 &596127171993596674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7673605305248314944, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
+  m_PrefabInstance: {fileID: 596127171993596673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824263734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &1030492586772416938
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -60,6 +60,11 @@ private bool hasLanded = false;
 
     private AudioSource audioSource;
 
+    public CinemachineCamera rocketCinemacineCam;
+    private CinemachineBasicMultiChannelPerlin rocketPerlin;
+    private float rocketShakeTimer;
+
+
 
 
 
@@ -98,6 +103,30 @@ private bool hasLanded = false;
                 {
                     cinemachineCam.Follow = playertransform;
                 }
+            }
+        }
+
+        if(rocketCinemacineCam != null)
+        {
+            rocketPerlin = rocketCinemacineCam.GetComponent<CinemachineBasicMultiChannelPerlin>();
+
+        }
+        else if(cinemachineCam != null)
+        {
+            rocketPerlin = cinemachineCam.GetComponent<CinemachineBasicMultiChannelPerlin>();
+        }
+    }
+
+    void Update()
+    {
+         if(rocketShakeTimer > 0)
+        {
+            rocketShakeTimer -= Time.deltaTime;
+            if(rocketShakeTimer <= 0 && rocketPerlin != null)
+            {
+                rocketPerlin.AmplitudeGain = 0f;
+                rocketPerlin.FrequencyGain = 0f;
+
             }
         }
     }
@@ -309,6 +338,8 @@ PlaySound(coinCollectSfx);
        isCrashing = true;
        isPiloting = false;
 
+       TriggerRocketCameraShake(4.5f, 0.4f);
+
        if(audioSource != null)
         {
             audioSource.Stop();
@@ -340,6 +371,17 @@ PlaySound(coinCollectSfx);
         else
         {
             RestartGame();
+        }
+    }
+
+    public void TriggerRocketCameraShake(float intensity, float duration)
+    {
+        if(rocketPerlin != null)
+        {
+            rocketPerlin.AmplitudeGain = intensity;
+            rocketPerlin.FrequencyGain = intensity;
+            rocketShakeTimer = duration;
+            
         }
     }
 

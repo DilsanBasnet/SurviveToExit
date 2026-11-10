@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.Cinemachine;
 
 
 public class Player : MonoBehaviour
@@ -58,6 +59,10 @@ public class Player : MonoBehaviour
     private bool isDead = false;
     private AudioSource audioSource;
 
+    public CinemachineCamera playerCinemachineCam;
+    private CinemachineBasicMultiChannelPerlin playerPerlin;
+    private float shakeTimer;
+
 
 
 
@@ -78,13 +83,30 @@ public class Player : MonoBehaviour
         }
         UpdatePlayerUI();
 
+
+        if(playerCinemachineCam != null)
+        {
+            playerPerlin = playerCinemachineCam.GetComponent<CinemachineBasicMultiChannelPerlin>();
+        }
+
     }
 
     void Update()
     {
+        if(shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if(shakeTimer <= 0 && playerPerlin != null)
+            {
+                playerPerlin.AmplitudeGain = 0f;
+                playerPerlin.FrequencyGain = 0f;
+            }
+        }
+
         if(isDead) return;
 
         move = 0f;
+
 
     if(Keyboard.current != null)
         {
@@ -300,6 +322,8 @@ if(enableWallJump)
         if(isDead) return;
         isDead = true;
 
+        TriggerPlayerCameraShake(3f, 0.3f);
+
         MonoBehaviour fallRespawnScript = GetComponent("FallRespawn") as MonoBehaviour;
 
         if(fallRespawnScript != null)
@@ -328,6 +352,15 @@ if(enableWallJump)
         Invoke(nameof(RestartGame), 0.8f);
     }
 
+public void TriggerPlayerCameraShake(float intensity, float duration)
+    {
+        if(playerPerlin != null)
+        {
+            playerPerlin.AmplitudeGain = intensity;
+            playerPerlin.FrequencyGain = intensity;
+            shakeTimer = duration;
+        }
+    }
     public void TriggerExternalDeath()
     {
         TriggerDeath();

@@ -6001,6 +6001,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1453054949813497116, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
   m_PrefabInstance: {fileID: 1879880258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &718091011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7673605305248314944, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
+  m_PrefabInstance: {fileID: 1879880258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718091008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &773309411
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,6 +6156,10 @@ PrefabInstance:
       propertyPath: TargetOffset.y
       value: 2.12
       objectReference: {fileID: 0}
+    - target: {fileID: 1802065165882346942, guid: 67025f750a714a34fb7d1cfcd2077193, type: 3}
+      propertyPath: NoiseProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 646ae2055d2eb9344beeaa765cd68344, type: 2}
     - target: {fileID: 4562999867659799626, guid: 67025f750a714a34fb7d1cfcd2077193, type: 3}
       propertyPath: m_Name
       value: PlayerCineMachineCam
@@ -6389,6 +6404,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 718091008}
     - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
+      propertyPath: rocketCinemacineCam
+      value: 
+      objectReference: {fileID: 718091011}
+    - target: {fileID: 5833850754732103805, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: rocketFlightLoopSfx
       value: 
       objectReference: {fileID: 8300000, guid: 1124c9959308c9547af31c47e7fa4198, type: 3}
@@ -6541,6 +6560,10 @@ PrefabInstance:
       propertyPath: deathParticlePrefab
       value: 
       objectReference: {fileID: 4057922453157575502, guid: 6f9472367a817414491f94da223165a8, type: 3}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: playerCinemachineCam
+      value: 
+      objectReference: {fileID: 1044428952}
     - target: {fileID: 1805858805621903640, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_Size.x
       value: 0.72826266
@@ -6647,6 +6670,17 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: -10}
+--- !u!114 &1044428952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6883177375957226748, guid: 67025f750a714a34fb7d1cfcd2077193, type: 3}
+  m_PrefabInstance: {fileID: 824088394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044428949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &1045217208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7120,6 +7154,10 @@ PrefabInstance:
       propertyPath: timeOutPanel
       value: 
       objectReference: {fileID: 1474973927}
+    - target: {fileID: 4639390076011465615, guid: d8c3726fc91b5574c8ebf34c29bd974b, type: 3}
+      propertyPath: buttonClickSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6820bf6dd1f6b044fa324f1601393887, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -10,6 +10,7 @@ public class LaserDamage : MonoBehaviour
             Player player = collision.GetComponent<Player>() ;
             if(player != null)
             {
+                player.TriggerPlayerCameraShake(3f, 0.3f);
               player.TriggerExternalDeath();
             }
             else
@@ -24,6 +25,7 @@ public class LaserDamage : MonoBehaviour
 
             if(rocket != null)
             {
+                rocket.TriggerRocketCameraShake(4.5f, 0.4f);
                 rocket.TriggerExternalCrash();
             
             }
@@ -42,6 +44,7 @@ public class LaserDamage : MonoBehaviour
 
             if(player != null)
             {
+                player.TriggerPlayerCameraShake(3f, 0.3f);
                 player.TriggerExternalDeath();
             }
              else
@@ -55,6 +58,7 @@ public class LaserDamage : MonoBehaviour
 
            if(rocket != null)
             {
+                rocket.TriggerRocketCameraShake(4.5f, 0.4f);
                 rocket.TriggerExternalCrash();
             }
             else
