@@ -9415,6 +9415,10 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 1397563956}
+    - target: {fileID: 9000908259409613683, guid: 3385c97d257fa7141bd42f71be65bd2b, type: 3}
+      propertyPath: buttonClickSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 6820bf6dd1f6b044fa324f1601393887, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9437,6 +9441,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1419662059}
+    - target: {fileID: 831015038912955578, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261390484841791158, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4229668082709947500, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9523,7 +9535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4695133040249817058, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5723046982585979756, guid: bcc22c688932b574d9a42a9c21281078, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
