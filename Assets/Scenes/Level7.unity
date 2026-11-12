@@ -7065,6 +7065,63 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1001 &449941657
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3818865235153593781, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_Name
+      value: star background
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
 --- !u!1 &459661575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2118066281611923318, guid: 5be3d6bfdd3cb884896d5f3bf37fef1a, type: 3}
@@ -14986,15 +15043,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.b
-      value: 0.19215687
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.g
-      value: 0.19215687
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.r
-      value: 0.1981132
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_SortingOrder
@@ -22016,15 +22073,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.b
-      value: 0.19215687
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.g
-      value: 0.19215687
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.r
-      value: 0.1981132
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_SortingOrder
@@ -24344,6 +24401,7 @@ SceneRoots:
   - {fileID: 6487488972062283649}
   - {fileID: 1468565278}
   - {fileID: 309810114}
+  - {fileID: 449941657}
   - {fileID: 1850540525}
   - {fileID: 1361963852}
   - {fileID: 964445037}

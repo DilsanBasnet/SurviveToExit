@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba6de99428e0e04f98cc03ebc8d5355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
-  currentLevelNumber: 10
+  currentLevelNumber: 12
 --- !u!1001 &106444884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,6 +995,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c94856a191e9f0f48bff8cb8c8ad902f, type: 3}
+--- !u!1001 &155423505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3818865235153593781, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_Name
+      value: star background
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025249516916298956, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 29ea4f561b051444bb0868b04ee63c04, type: 3}
 --- !u!1001 &196789443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5474,15 +5531,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.b
-      value: 0.16642931
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.g
-      value: 0.16642931
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_Color.r
-      value: 0.18867922
+      value: 0.35686275
       objectReference: {fileID: 0}
     - target: {fileID: 2992981868568197526, guid: a7243475d2e902049855b985c9423f00, type: 3}
       propertyPath: m_SortingOrder
@@ -16089,7 +16146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba6de99428e0e04f98cc03ebc8d5355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelGoal
-  currentLevelNumber: 10
+  currentLevelNumber: 12
 --- !u!1001 &1218163201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19103,6 +19160,7 @@ SceneRoots:
   - {fileID: 1468565278}
   - {fileID: 309810114}
   - {fileID: 2027582627}
+  - {fileID: 155423505}
   - {fileID: 77940809}
   - {fileID: 964445037}
   - {fileID: 83159006}
