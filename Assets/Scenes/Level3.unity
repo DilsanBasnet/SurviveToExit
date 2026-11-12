@@ -6892,6 +6892,22 @@ PrefabInstance:
       propertyPath: m_text
       value: MOVEING PLATFORM
       objectReference: {fileID: 0}
+    - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.8679245
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7546183
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.06959773
+      objectReference: {fileID: 0}
+    - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4292722706
+      objectReference: {fileID: 0}
     - target: {fileID: 7233875189962304133, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_text
       value: LEVEL 3

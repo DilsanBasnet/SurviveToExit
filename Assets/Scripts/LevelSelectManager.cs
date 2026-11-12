@@ -14,7 +14,11 @@ public class LevelSelectManager : MonoBehaviour
         public GameObject playerSprite;
         public TMP_Text levelText;
         public int levelNumber;
+        
     }
+
+    public GameObject panel1;
+    public GameObject panel2;
 
     public LevelButtonInfo[] levels;
     public Sprite unlockedSprite;
@@ -46,6 +50,23 @@ public class LevelSelectManager : MonoBehaviour
         }
 
         UpdateLevelStates();
+
+        OpenPanel1();
+    }
+
+    public void OpenPanel2()
+    {
+        if(buttonClickSfx != null && audioSource != null) audioSource.PlayOneShot(buttonClickSfx);
+        if(panel1 != null ) panel1.SetActive(false);
+        if(panel2 != null) panel2.SetActive(true);
+
+    }
+
+    public void OpenPanel1()
+    {
+        if(buttonClickSfx != null && audioSource != null) audioSource.PlayOneShot(buttonClickSfx);
+        if(panel2 != null) panel2.SetActive(false);
+        if(panel1 != null) panel1.SetActive(true);
     }
 
     void UpdateLevelStates()
