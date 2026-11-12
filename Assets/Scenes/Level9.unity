@@ -24695,7 +24695,7 @@ PrefabInstance:
       objectReference: {fileID: 1393310604}
     - target: {fileID: 4639390076011465615, guid: d8c3726fc91b5574c8ebf34c29bd974b, type: 3}
       propertyPath: LevelTimeLimit
-      value: 120
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 4639390076011465615, guid: d8c3726fc91b5574c8ebf34c29bd974b, type: 3}
       propertyPath: buttonClickSfx

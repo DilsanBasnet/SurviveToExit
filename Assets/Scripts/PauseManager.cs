@@ -27,7 +27,7 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
-        if(Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if(Keyboard.current != null && Keyboard.current.tKey.wasPressedThisFrame)
         {
             if(isPaused)
             {

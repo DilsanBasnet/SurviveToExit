@@ -16110,7 +16110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_text
-      value: MOVING OBSTACLE
+      value: OBSTACLE + LASER
       objectReference: {fileID: 0}
     - target: {fileID: 7233875189962304133, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_text
