@@ -23266,6 +23266,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionParticleSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 950432327405455423, guid: 09bf3cd882977924e89e1c5424b45c2d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 950432327405455423, guid: 09bf3cd882977924e89e1c5424b45c2d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 950432327405455423, guid: 09bf3cd882977924e89e1c5424b45c2d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6013482828501684060, guid: 09bf3cd882977924e89e1c5424b45c2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.34

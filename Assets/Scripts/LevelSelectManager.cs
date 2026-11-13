@@ -130,12 +130,25 @@ public class LevelSelectManager : MonoBehaviour
                     levels[i].playerSprite.SetActive(false);
                 }
 
+
             }
         }
     }
 
     public void LoadLevel(int levelNum)
     {
+        StartCoroutine(PlaySoundAndLoadLevel(levelNum));
+    }
+
+     private IEnumerator PlaySoundAndLoadLevel(int levelNum)
+    {
+        if(buttonClickSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonClickSfx);
+        }
+
+        yield return new WaitForSecondsRealtime(0.15f);
+
         SceneManager.LoadScene("Level" + levelNum);
     }
 
