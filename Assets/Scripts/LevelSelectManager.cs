@@ -69,7 +69,7 @@ public class LevelSelectManager : MonoBehaviour
         if(panel1 != null) panel1.SetActive(true);
     }
 
-    void UpdateLevelStates()
+    public void UpdateLevelStates()
     {
         int unlockedLevel = PlayerPrefs.GetInt(PREF_KEY, 1) ;
 
