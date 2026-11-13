@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class ControlInvertTrigger : MonoBehaviour
 {
-   public bool triggerOnlyOnce = true;
-   private bool hasTriggered = false;
-
+    private bool hasTriggered = false;
    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(hasTriggered && triggerOnlyOnce) return;
+        if(hasTriggered) return;
 
-        LevelControlInverter inverter = collision.GetComponent<LevelControlInverter>();
+        LevelControlInverter inverter = collision.GetComponent<LevelControlInverter>() 
+                                        ?? collision.GetComponentInParent<LevelControlInverter>()
+                                        ?? collision.GetComponentInChildren<LevelControlInverter>();
 
-        if(inverter == null)
+     if(inverter != null)
         {
-            inverter = collision.GetComponentInParent<LevelControlInverter>();  
-        }
+           hasTriggered = true;
+           inverter.InvertControls();
 
-        if(inverter != null)
-        {
-            inverter.InverControls();
-            hasTriggered = true;
+           Destroy(gameObject);
 
-            if(triggerOnlyOnce)
-            {
-                gameObject.SetActive(false);
-            }
         }
     }
+        
+      
+    }
+      
 
-}
+

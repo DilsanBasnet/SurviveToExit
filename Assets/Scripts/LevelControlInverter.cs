@@ -18,7 +18,7 @@ public class LevelControlInverter : MonoBehaviour
         playerScript = GetComponent<Player>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
-    public void InverControls()
+    public void InvertControls()
     {
         isInverted = !isInverted;
     }
@@ -41,11 +41,12 @@ public class LevelControlInverter : MonoBehaviour
             }
         }
 
-        if(isInverted)
+        if (isInverted)
         {
             moveDir = -moveDir;
+
         }
-        
+
         rb.linearVelocity = new Vector2(moveDir * playerScript.speed, rb.linearVelocity.y);
 
         if(spriteRenderer != null)
