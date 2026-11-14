@@ -14807,7 +14807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AdminUnlockCheat
   cheatCode: dilsan
-  totalLevels: 16
+  totalLevels: 25
   levelAdminUnlock: {fileID: 57945951}
 --- !u!4 &2022647370
 Transform:

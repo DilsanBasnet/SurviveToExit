@@ -6,6 +6,20 @@ public class PortalTeleporter : MonoBehaviour
     public Transform targetPortal;
     private static bool canTeleport = true;
 
+    public AudioClip portalEnteringSfx;
+    public float portalVolume = 0.5f;
+    private static AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if(audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -15,16 +29,18 @@ public class PortalTeleporter : MonoBehaviour
         {
             if(targetPortal != null)
             {
+
+                if(portalEnteringSfx != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(portalEnteringSfx, portalVolume);
+
+                }
+
+
                 StartCoroutine(TeleportCooldown());
 
                 collision.transform.position = targetPortal.position;
 
-                Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-
-                if(rb != null)
-                {
-                    
-                }
             }
         }  
     }
