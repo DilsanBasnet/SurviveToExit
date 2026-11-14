@@ -389,13 +389,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.428655
       objectReference: {fileID: 0}
+    - target: {fileID: 98637888762990287, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -75
+      objectReference: {fileID: 0}
     - target: {fileID: 3989444685518966938, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_Name
       value: LEVEL & LEVEL NAME
       objectReference: {fileID: 0}
     - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_text
-      value: CONTROLS
+      value: CONTROLS EASY
       objectReference: {fileID: 0}
     - target: {fileID: 5361628737794576858, guid: c1744a7105dcd1a4b96c11df15b9b42d, type: 3}
       propertyPath: m_fontColor.b
