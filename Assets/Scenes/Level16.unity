@@ -15630,7 +15630,7 @@ MonoBehaviour:
   fillImage: {fileID: 802954332}
   visualRoot: {fileID: 97133295}
   gameObjectToActivate: {fileID: 1777740077}
-  interactDistance: 9.38
+  interactDistance: 11.95
   requiredHoldTime: 2
   animator: {fileID: 0}
 --- !u!4 &1225355433 stripped
