@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public Vector2 groundCheckSize = new Vector2(0.2f, 0.1f);
     public LayerMask groundLayer;
 
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2.0f;
+
 
 
     public Transform wallCheckRight;
@@ -397,6 +400,16 @@ public void TriggerPlayerCameraShake(float intensity, float duration)
         if(!isWallJumping)
         {
             rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y) ;
+        }
+
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1f) * Time.fixedDeltaTime;
+            
+      }
+      else if (rb.linearVelocity.y > 0 && Keyboard.current != null && !(Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed || Keyboard.current.spaceKey.isPressed))
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
         }
     }
 }
