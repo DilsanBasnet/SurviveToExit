@@ -16,10 +16,26 @@ public class ControlInvertTrigger : MonoBehaviour
            hasTriggered = true;
            inverter.InvertControls();
 
+
+        //    
+
+        Player player = collision.GetComponent<Player>() 
+                        ?? collision.GetComponentInParent<Player>()
+                        ?? FindAnyObjectByType<Player>();
+
+        if(player != null)
+            {
+                player.TriggerPlayerCameraShake(1.0f, 0.2f);
+            }
+
            Destroy(gameObject);
 
         }
+
+        
     }
+
+    private bool notTriggered() => false;
         
       
     }
