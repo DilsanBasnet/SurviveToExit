@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
    public AudioClip spaceMusic;
 
 
-   public float musicVolume = 0.5f;
+   public float menuMusicVolume = 0.5f;
+   public float playerMusicVolume = 0.5f;
+   public float spaceMusicVolume = 0.5f;
 
    private AudioSource musicSource;
    private bool isSpaceMusicPlaying = false;
@@ -37,15 +39,23 @@ public class AudioManager : MonoBehaviour
         }
 
         musicSource.loop = true;
-        musicSource.volume = musicVolume;
+       
     }
 
     void Update()
     {
-        if(musicSource != null)
+        if(musicSource != null && musicSource.isPlaying)
         {
-            musicSource.volume = musicVolume;
+            musicSource.volume = GetCurrentTrackVolume();
         }
+    }
+
+    private float GetCurrentTrackVolume()
+    {
+        if(musicSource.clip == menuAndLevelSelectMusic) return menuMusicVolume;
+        if(musicSource.clip == playerSideMusic) return playerMusicVolume;
+        if(musicSource.clip == spaceMusic) return spaceMusicVolume;
+        return 0.5f;
     }
 
     void OnEnable()
@@ -72,7 +82,7 @@ public class AudioManager : MonoBehaviour
             if(musicSource.clip != menuAndLevelSelectMusic || !musicSource.isPlaying)
             {
                 musicSource.clip = menuAndLevelSelectMusic;
-                musicSource.volume = musicVolume;
+                musicSource.volume = menuMusicVolume;
                 musicSource.Play();
             }
         } 
@@ -82,7 +92,7 @@ public class AudioManager : MonoBehaviour
             if(musicSource.clip != playerSideMusic || !musicSource.isPlaying)
             {
                 musicSource.clip =  playerSideMusic;
-                musicSource.volume = musicVolume;
+                musicSource.volume = playerMusicVolume;
                 musicSource.Play();
             }
         }
@@ -94,7 +104,7 @@ public class AudioManager : MonoBehaviour
         {
             isSpaceMusicPlaying = true;
             musicSource.clip = spaceMusic;
-            musicSource.volume = musicVolume;
+            musicSource.volume = spaceMusicVolume;
             musicSource.Play();
         }
     }
@@ -106,7 +116,7 @@ public class AudioManager : MonoBehaviour
         if(playerSideMusic != null && musicSource.clip != playerSideMusic)
         {
             musicSource.clip = playerSideMusic;
-            musicSource.volume = musicVolume;
+            musicSource.volume = playerMusicVolume;
             musicSource.Play();
         }
     }

@@ -5655,6 +5655,9 @@ MonoBehaviour:
   menuAndLevelSelectMusic: {fileID: 8300000, guid: c6684a7d83e78764292864945d91f978, type: 3}
   playerSideMusic: {fileID: 8300000, guid: b5e1e3f0e8633a542b2a83a760e1e06b, type: 3}
   spaceMusic: {fileID: 8300000, guid: 99557b42675315247acb275fa8510e71, type: 3}
+  menuMusicVolume: 0.3
+  playerMusicVolume: 0.1
+  spaceMusicVolume: 1
 --- !u!4 &1234817009
 Transform:
   m_ObjectHideFlags: 0
