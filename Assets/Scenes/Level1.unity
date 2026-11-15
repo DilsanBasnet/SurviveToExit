@@ -4809,7 +4809,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.2, g: 0.19215687, b: 0.19215687, a: 1}
+  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
   m_Origin: {x: -27, y: -8, z: 0}
   m_Size: {x: 37, y: 27, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -8279,6 +8279,10 @@ PrefabInstance:
       propertyPath: playerCinemachineCam
       value: 
       objectReference: {fileID: 1618259716}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: enableCustomJumpPhysics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1805858805621903640, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_Size.x
       value: 0.80170584

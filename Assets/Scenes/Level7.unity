@@ -24418,6 +24418,10 @@ PrefabInstance:
       propertyPath: playerCinemachineCam
       value: 
       objectReference: {fileID: 894871425}
+    - target: {fileID: 215124927064604726, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
+      propertyPath: enableCustomJumpPhysics
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1805858805621903640, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_Size.x
       value: 0.75677836
