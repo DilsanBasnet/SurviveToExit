@@ -56,6 +56,16 @@ public class PauseManager : MonoBehaviour
         StartCoroutine(PlayClickAndResume());
     }
 
+    public void RestartLevel()
+    {
+        StartCoroutine(PlayClickAndRestart());
+    }
+
+    public void GoToLevelScene()
+    {
+        StartCoroutine(PlayClickAndLoad("LevelsScene"));
+    }
+
 
     public void GoToMainMenu()
     {
@@ -83,17 +93,33 @@ public class PauseManager : MonoBehaviour
 
     }
 
+    private IEnumerator PlayClickAndRestart()
+    {
+        if(buttonClickSfx != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(buttonClickSfx);
+
+        }
+
+        yield return new WaitForSecondsRealtime(0.15f);
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     private IEnumerator PlayClickAndLoad(string sceneName)
     {
         if(buttonClickSfx != null && audioSource != null)
         {
             audioSource.PlayOneShot(buttonClickSfx);
         }
+
         yield return new WaitForSecondsRealtime(0.15f);
 
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
     }
+
 
     private IEnumerator PlayClickAndQuit()
     {
