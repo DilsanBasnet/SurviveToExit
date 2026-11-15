@@ -135,6 +135,11 @@ private bool hasLanded = false;
     {
         isPiloting = true;
 
+        if(AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SwitchToSpaceMusic();
+        }
+
         if(boxCollider != null)
         {
             boxCollider.isTrigger = false;
@@ -431,6 +436,7 @@ PlaySound(coinCollectSfx);
        
         CrashAndRestart();
     }
+
 
 
 }
