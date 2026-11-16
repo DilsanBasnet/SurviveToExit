@@ -413,6 +413,25 @@ PlaySound(coinCollectSfx);
 
         PlaySound(successfullLandingSfx);
 
+        if(SceneManager.GetActiveScene().name == "Level20")
+        {
+            GameCompleteSceneLoader level20Handler = FindAnyObjectByType<GameCompleteSceneLoader>();
+
+            if(level20Handler != null)
+            {
+                float LevelTime = 0f;
+                LevelTimer timer = FindAnyObjectByType<LevelTimer>();
+                if(timer != null)
+                {
+                    LevelTime = timer.GetElapsedTime();
+                }
+
+                level20Handler.TriggerLevel20Complete(LevelTime);
+                return;
+                
+            }
+        }
+
         float currentLevelTime = 0f;
         LevelTimer levelTimer = FindAnyObjectByType<LevelTimer>();
 
