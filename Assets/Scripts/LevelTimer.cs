@@ -106,5 +106,10 @@ public class LevelTimer : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public float GetElapsedTime()
+    {
+        return LevelTimeLimit - remainingTime;
+    }
+
 
 }

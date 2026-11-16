@@ -413,8 +413,19 @@ PlaySound(coinCollectSfx);
 
         PlaySound(successfullLandingSfx);
 
-        float delay = successfullLandingSfx != null ? successfullLandingSfx.length : 1.5f;
-        StartCoroutine(LoadNextLevelAfterDelay(delay));
+        float currentLevelTime = 0f;
+        LevelTimer levelTimer = FindAnyObjectByType<LevelTimer>();
+
+        if(levelTimer != null)
+        {
+            currentLevelTime = levelTimer.GetElapsedTime();
+        }
+
+        LevelCompleteManager completeManager = FindAnyObjectByType<LevelCompleteManager>();
+        if(completeManager != null)
+        {
+            completeManager.TriggerLevelComplete(currentLevelTime);
+        }
     }
 
     private System.Collections.IEnumerator LoadNextLevelAfterDelay(float delay)
