@@ -1355,11 +1355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.79
+      value: 42.4
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.807
+      value: 17.1
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2428,6 +2428,10 @@ PrefabInstance:
     - target: {fileID: 8231635546285869952, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855579115193877335, guid: f36778823aefb5b41b43417c0627da03, type: 3}
+      propertyPath: m_text
+      value: LEVEL 20 COMPLETE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
