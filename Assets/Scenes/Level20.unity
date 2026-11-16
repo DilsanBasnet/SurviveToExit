@@ -956,6 +956,35 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee47e6614f23ea24f95954f7b5a3f071, type: 3}
+--- !u!1 &198834656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6751891583775716441, guid: 94160b44b1b67e84b9dee68c6c25ac13, type: 3}
+  m_PrefabInstance: {fileID: 1432248970}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &198834657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198834656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f83286f1acc75d4cae7fb69776d21fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameCompleteSceneLoader
+  levelCompletePanel: {fileID: 771194202}
+  levelTimeText: {fileID: 771194201}
+  starImages:
+  - {fileID: 771194200}
+  - {fileID: 771194199}
+  - {fileID: 771194198}
+  - {fileID: 771194197}
+  - {fileID: 771194196}
+  fillStarSprite: {fileID: -8723566824009969974, guid: 527d425222256a64ea54f90ce640f3c8, type: 3}
+  unfillStarSprite: {fileID: -4755918450570671444, guid: 0711ff7392ce0a9449c99b096d36d63c, type: 3}
+  targetTimeForFiveStars: 50
+  buttonClickSfx: {fileID: 8300000, guid: 6820bf6dd1f6b044fa324f1601393887, type: 3}
 --- !u!1001 &245014364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1355,11 +1384,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.4
+      value: -8.46
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.1
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4953651753130199631, guid: 62267cd14c1f597429c929dd3007eb25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2304,18 +2333,18 @@ PrefabInstance:
     - target: {fileID: 6650387181300961992, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1432248971}
+      objectReference: {fileID: 198834657}
     - target: {fileID: 6650387181300961992, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6650387181300961992, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnNextLevelClicked
+      value: OnGoToGameCompleteSceneClicked
       objectReference: {fileID: 0}
     - target: {fileID: 6650387181300961992, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelCompleteManager, Assembly-CSharp
+      value: GameCompleteSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6650387181300961992, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2412,7 +2441,7 @@ PrefabInstance:
     - target: {fileID: 8231635546285869952, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1432248971}
+      objectReference: {fileID: 198834657}
     - target: {fileID: 8231635546285869952, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -2423,7 +2452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8231635546285869952, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LevelCompleteManager, Assembly-CSharp
+      value: GameCompleteSceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8231635546285869952, guid: f36778823aefb5b41b43417c0627da03, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2781,11 +2810,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3531065795537112937, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.38
+      value: 41.2
       objectReference: {fileID: 0}
     - target: {fileID: 3531065795537112937, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.43
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 3531065795537112937, guid: 7dec1affafd9c0746831aadb81e9c004, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19485,22 +19514,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompleteManager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4876159043406575744, guid: 94160b44b1b67e84b9dee68c6c25ac13, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6751891583775716441, guid: 94160b44b1b67e84b9dee68c6c25ac13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 198834657}
   m_SourcePrefab: {fileID: 100100000, guid: 94160b44b1b67e84b9dee68c6c25ac13, type: 3}
---- !u!114 &1432248971 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4876159043406575744, guid: 94160b44b1b67e84b9dee68c6c25ac13, type: 3}
-  m_PrefabInstance: {fileID: 1432248970}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e65ba1078266f4da70eaf096090acc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelCompleteManager
 --- !u!1001 &1436460164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21384,11 +21406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2078073762466242419, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.64
+      value: 43.46
       objectReference: {fileID: 0}
     - target: {fileID: 2078073762466242419, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.28
+      value: 16.65
       objectReference: {fileID: 0}
     - target: {fileID: 2078073762466242419, guid: 0d18091017097ca4cbaae5c809664144, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21542,11 +21564,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2514613488281838187, guid: 93ed5725b22db4a44a6b0d7546b463d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 44.64
+      value: 43.46
       objectReference: {fileID: 0}
     - target: {fileID: 2514613488281838187, guid: 93ed5725b22db4a44a6b0d7546b463d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.28
+      value: 16.65
       objectReference: {fileID: 0}
     - target: {fileID: 2514613488281838187, guid: 93ed5725b22db4a44a6b0d7546b463d2, type: 3}
       propertyPath: m_LocalPosition.z
