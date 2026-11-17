@@ -1,4 +1,8 @@
-# SURVIVE TO EXIT - Platformer X Space 
+# SURVIVE TO EXIT - Platformer X Space [![Hackatime](https://img.shields.io/badge/Hackatime-88h.9M-ff477e?logo=wakatime&logoColor=white)](https://github.com/DilsanBasnet)
+
+## GAME : [SURVIVETOEXIT](https://dilsanbasnet.itch.io/survivetoexit)
+
+## TUTORIAL : https://www.youtube.com/watch?v=CFHHrhnejv4
 
 **Survive To Exit** is a 2D space platformer and rocket-landing game built in Unity. The game combines a troll-style platformer inspired by Level Devil with a precision rocket-landing simulator. Every stage is designed to be frustrating, huge, difficult, and fun—built to test patience and temper across 20 intense levels
 
@@ -95,6 +99,14 @@ DON'T RELAY ON THESE KEYS, BECAUSE THERE ARE CONTROLS LEVELS , WHERE THE CONTORL
 ## LEVEL COMPLETE PANEL: 
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/3b0fa9c5-e126-478e-858b-2ff0ac025b72" />
+
+
+## Author: 
+---
+[DILSAN BASNET](https://github.com/DilsanBasnet)
+
+
+
 
 ---
 ## GAME COMPLETE SCENE : 
